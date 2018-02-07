@@ -13,8 +13,7 @@
 {% block title %}{% parent %} - {{ item.name }}{% endblock %}
 {% block content %}
   <p><a href="{{ url('imagecarousel') }}">View a list of all imagecarousel</a></p>
-  <h1>{{ item.name }}</h1>
-  <ul>
+
       <li>
         <strong>Name: </strong>
         {{ item.name }}
@@ -34,27 +33,52 @@
         {# Format the date. You can use PHP's date function to format as needed. http://php.net/manual/en/function.date.php #}
         {{ item.publish_date|date('F d Y') }}
       </li>
-      <li>
-        <strong>Carousel: </strong>
+
+
         {# Loop of your Repeatable Form items. Remember, you can sort the order in your CMS if you need. #}
-        <ul>
-        {% for row in item.carousel %}
-            <li>
-              <strong>Gallery: </strong>
-              {# You can pull out a lot more information from the gallery property. Info here: #}
-                {# http://www.webhook.com/docs/widget-template-reference/#image #}
-                <ul>
-                  {% for image in row.gallery %}
-                    <li>
-                      {# You can get the raw image url by accessing image.url #}
-                      <img src="{{ image|imageSize(200, 200) }}">
-                      <div>{{ image.caption }}</div>
-                    </li>
-                  {% endfor %}
-                </ul>
-            </li>
+        
+
+        <div class="sliderControls">
+          <div class="previous">PREV</div>
+          <div class="next">NEXT</div>
+        </div>
+
+        <div class="carousel_container row">
+        {% for row in item.carousel %}                  
+                    
+                    {% for image in row.gallery %}
+                    <div class="carousel_image col-xs-10 col-xs-offset-1">  
+                            <img src="{{ image|imageSize(200, 200) }}">
+                            {{ image.caption }}
+                    </div>  
+                    {% endfor %}
+                    
         {% endfor %}
-        </ul>
-      </li>
-  </ul>
+        </div>
+
+        <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+
+        <script type="text/javascript">
+          $(document).ready(function(){
+            $('.carousel_container').slick({
+              arrows:false,
+              adaptiveHeight:true,
+            });
+
+            $('.previous').click(function(){
+              $('.carousel_container').slick('slickPrev');
+            });
+
+            $('.next').click(function(){
+              $('.carousel_container').slick('slickNext');
+            });
+          });
+        </script>
+
+
+
+
+
 {% endblock %}
