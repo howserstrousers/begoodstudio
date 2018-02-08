@@ -60,3 +60,8 @@ body {
 ul, li {
 	list-style: none;
 }
+
+.carousel_container{
+	border:1px solid blue;
+	overflow: hidden;
+}
