@@ -36,13 +36,34 @@
         {# Loop of your Repeatable Form items. Remember, you can sort the order in your CMS if you need. #}
         <ul>
           
-          <div class="video">
+          <div class="video" data-type="video" class="wy-figure-full">
             {% for row in item.video %}
                       {{ row.wysiwyg_text|safe }}
             {% endfor %}
+
           </div>
 
         </ul>
       </li>
+  <!--
+      <li>
+        <strong>Preview URL: </strong>
+        {{ item.preview_url }}
+      </li>
+      <li>
+        <strong>Slug: </strong>
+        {{ item.slug }}
+      </li>
+      <li>
+        <strong>Website: </strong>
+        {{ item.website }}
+      </li>
+
+      {# A full width video #}
+        <figure data-type="video" class="wy-figure-full">
+          <iframe src="{{ item.website }}"></iframe>
+        </figure>
+    -->
+      
 </div>
 {% endblock %}
