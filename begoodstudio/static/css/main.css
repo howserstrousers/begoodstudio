@@ -1,4 +1,4 @@
-/* BEGIN CSS RESET 
+/* BEGIN CSS RESET  */
 	html, body, div, span, applet, object, iframe,
 	h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 	a, abbr, acronym, address, big, cite, code,
@@ -43,10 +43,26 @@
 		border-collapse: collapse;
 		border-spacing: 0;
 	}
- END CSS RESET */
+/*END CSS RESET */
 
 
 body {
+}
+
+.headercontainer{
+	padding-top: 1%;
+	padding-bottom:8.5%;	
+	padding-left:2.5%;
+}
+
+.headercontrols{
+	width:40%;
+}
+
+.headercontrols div {
+ 	float:right;
+ 	padding-right:2.5%;
+
 }
 
 .videocontainer{
