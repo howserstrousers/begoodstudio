@@ -49,19 +49,22 @@
 body {
 }
 
+/* HEADER */
+
 .headercontainer{
+	width:100%;
 	padding-top: 1%;
 	padding-bottom:8.5%;	
 	padding-left:2.5%;
 }
 
-.headercontrols{
-	width:40%;
+.headerLogo{
+	float: left;
 }
 
-.headercontrols div {
- 	float:right;
- 	padding-right:2.5%;
+.navigation{
+	width:60%;
+	float: left;
 
 }
 
