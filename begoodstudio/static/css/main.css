@@ -45,9 +45,29 @@
 	}
 /*END CSS RESET */
 
+html{
+	font-size: 12px;
+}
+	/* menu collapse */
+		@media only screen and (min-width: 1080px){
+			html{
+				font-size: 16px;
+			}
+		}
+
 
 body {
 }
+
+a {
+	color:black;
+}
+
+a:visited {
+	color:black;
+}
+
+
 
 /* HEADER */
 
@@ -79,9 +99,42 @@ body {
 				
 			}
 		}
+/* END HEADER */
 
 
-	.videocontainer{
+
+/*Projects List*/
+	.projectcontainer{
+		padding-left: 2.5%;
+		padding-right: 2.5%;
+	}
+
+	.projectlist{
+		text-align: center;
+	}
+
+	.projectlist a{
+		font-size: 4rem;
+		padding-right:2%;
+
+		display: inline-block;
+		text-decoration: none;
+	}
+
+/*END Projects List*/
+
+/*ABOUT*/
+	.aboutcontainer{
+		padding-left: 5%;
+		padding-right: 5%;
+	}
+
+	.aboutdescription{
+		margin-bottom: 2%;
+	}
+/*END ABOUT*/
+
+.videocontainer{
 		border:1px solid blue;
 	}
 
