@@ -13,8 +13,11 @@
 {% block title %}{% parent %} - {{ item.name }}{% endblock %}
 {% block content %}
 
+<div id="maincontainer">
+</div>
+
 <div class="projectcontainer">
-  <div class="projectlist">
+  <div id="projectlist">
     {% for row in item.grid %}
       <a href="/{{ row.link }}">
         <p>
@@ -22,7 +25,7 @@
         </p>
       </a>
     {% endfor %}
-  </viv>
+  </div>
 </div>
 
 {% endblock %}

@@ -12,4 +12,19 @@
       $('.next').click(function(){
         $('.carousel_container').slick('slickNext');
     });
+
 	});
+
+  $(document).ready(function() {
+    function setHeight() {
+      windowHeight = $(window).innerHeight();
+      $('#maincontainer').css('min-height', windowHeight);
+    };
+    setHeight();
+    
+    $(window).resize(function() {
+      setHeight();
+    });
+
+    $("#maincontainer").load("/assettest");
+  });

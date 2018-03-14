@@ -109,11 +109,11 @@ a:visited {
 		padding-right: 2.5%;
 	}
 
-	.projectlist{
+	#projectlist{
 		text-align: center;
 	}
 
-	.projectlist a{
+	#projectlist a{
 		font-size: 4rem;
 		padding-right:2%;
 
@@ -133,6 +133,18 @@ a:visited {
 		margin-bottom: 2%;
 	}
 /*END ABOUT*/
+
+/*MainContainer*/
+	#maincontainer{
+		height:100%;
+		width:60%;
+		border:1px solid blue;
+		position:absolute;
+		top:0;
+		right:0;
+
+	}
+/*END MainContainer*/
 
 .videocontainer{
 		border:1px solid blue;
