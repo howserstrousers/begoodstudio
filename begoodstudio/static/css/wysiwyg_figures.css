@@ -20,7 +20,7 @@ figure[data-type=table] {
 
 figure[data-type=video] {
   position: relative;
-  margin-bottom: 24px;
+  margin-bottom: 0;
   text-align: center;
   clear: both;
 }

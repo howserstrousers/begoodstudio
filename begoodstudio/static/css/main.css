@@ -136,12 +136,16 @@ a:visited {
 
 /*MainContainer*/
 	#maincontainer{
+		display: none;
 		height:100%;
 		width:60%;
 		border:1px solid blue;
 		position:absolute;
 		top:0;
 		right:0;
+		overflow: auto;
+
+		background-color: pink;
 
 	}
 /*END MainContainer*/
@@ -161,4 +165,52 @@ ul, li {
 .carousel_container{
 	border:1px solid blue;
 	overflow: hidden;
+	width:48%;
+	float:left;
 }
+
+
+/*TEMPLATES*/
+	/*Additional Assets*/
+		.videogrid{
+			border:1px solid blue;
+		}
+
+		.vgrid_single{
+			width:50%;
+			float:left;
+		}
+	/*Additional Assets*/
+/*END TEMPLATES*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

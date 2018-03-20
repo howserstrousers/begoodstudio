@@ -1,0 +1,208 @@
+{# ------------------------------------------------------- #}
+{# INDIVIDUAL VIEW FOR EACH casestudies #}
+{# This page can use any data from http:localhost:2000/cms/#/form/casestudies/ #}
+{# Webhook uses the SWIG.js (like Djagno/Twig) templating system. Their documentation is here: #}
+{# http://paularmstrong.github.io/swig/docs/tags/ #}
+{# Learn about calling data into Webhook pages here: #}
+{# http://www.webhook.com/docs/template-rules-and-filters/ #}
+{# ------------------------------------------------------- #}
+{# Confused what extends and blocks do? Watch a primer: #}
+{# http://www.webhook.com/docs/template-inheritance-blocks/ #}
+{% extends "templates/partials/base.html" %}
+{# This sets our page <title>. It will append this casestudies's name to the site title defined in base.html #}
+{% block title %}{% parent %} - {{ item.name }}{% endblock %}
+{% block content %}
+  <p><a href="{{ url('casestudies') }}">View a list of all casestudies</a></p>
+  <h1>{{ item.name }}</h1>
+  <ul>
+      <li>
+        <strong>Name: </strong>
+        {{ item.name }}
+      </li>
+      <li>
+        <strong>Create Date: </strong>
+        {# Format the date. You can use PHP's date function to format as needed. http://php.net/manual/en/function.date.php #}
+        {{ item.create_date|date('F d Y') }}
+      </li>
+      <li>
+        <strong>Last Updated: </strong>
+        {# Format the date. You can use PHP's date function to format as needed. http://php.net/manual/en/function.date.php #}
+        {{ item.last_updated|date('F d Y') }}
+      </li>
+      <li>
+        <strong>Publish Date: </strong>
+        {# Format the date. You can use PHP's date function to format as needed. http://php.net/manual/en/function.date.php #}
+        {{ item.publish_date|date('F d Y') }}
+      </li>
+      <li>
+        <strong>herovideo: </strong>
+        {{ item.herovideo|safe }}
+      </li>
+      <li>
+        <strong>carousel_1: </strong>
+        {# You can pull out a lot more information from the gallery property. Info here: #}
+        {# http://www.webhook.com/docs/widget-template-reference/#image #}
+        <ul>
+          {% for image in item.carousel_1 %}
+            <li>
+              {# You can get the raw image url by accessing image.url #}
+              <img src="{{ image|imageSize(200, 200) }}">
+              <div>{{ image.caption }}</div>
+            </li>
+          {% endfor %}
+        </ul>
+      </li>
+      <li>
+        <strong>grid_1: </strong>
+        {# You can pull out a lot more information from the gallery property. Info here: #}
+        {# http://www.webhook.com/docs/widget-template-reference/#image #}
+        <ul>
+          {% for image in item.grid_1 %}
+            <li>
+              {# You can get the raw image url by accessing image.url #}
+              <img src="{{ image|imageSize(200, 200) }}">
+              <div>{{ image.caption }}</div>
+            </li>
+          {% endfor %}
+        </ul>
+      </li>
+      <li>
+        <strong>poster_1: </strong>
+        {# You can pull out a lot more information from the image property. Info here: #}
+        {# http://www.webhook.com/docs/widget-template-reference/#image #}
+        <img src="{{ item.poster_1|imageSize(200, 200) }}" />
+      </li>
+      <li>
+        <strong>poster_2: </strong>
+        {# You can pull out a lot more information from the image property. Info here: #}
+        {# http://www.webhook.com/docs/widget-template-reference/#image #}
+        <img src="{{ item.poster_2|imageSize(200, 200) }}" />
+      </li>
+      <li>
+        <strong>video_2: </strong>
+        {{ item.video_2|safe }}
+      </li>
+      <li>
+        <strong>grid_2: </strong>
+        {# You can pull out a lot more information from the gallery property. Info here: #}
+        {# http://www.webhook.com/docs/widget-template-reference/#image #}
+        <ul>
+          {% for image in item.grid_2 %}
+            <li>
+              {# You can get the raw image url by accessing image.url #}
+              <img src="{{ image|imageSize(200, 200) }}">
+              <div>{{ image.caption }}</div>
+            </li>
+          {% endfor %}
+        </ul>
+      </li>
+      <li>
+        <strong>carousel_2: </strong>
+        {# You can pull out a lot more information from the gallery property. Info here: #}
+        {# http://www.webhook.com/docs/widget-template-reference/#image #}
+        <ul>
+          {% for image in item.carousel_2 %}
+            <li>
+              {# You can get the raw image url by accessing image.url #}
+              <img src="{{ image|imageSize(200, 200) }}">
+              <div>{{ image.caption }}</div>
+            </li>
+          {% endfor %}
+        </ul>
+      </li>
+      <li>
+        <strong>heroimage_2: </strong>
+        {# You can pull out a lot more information from the image property. Info here: #}
+        {# http://www.webhook.com/docs/widget-template-reference/#image #}
+        <img src="{{ item.heroimage_2|imageSize(200, 200) }}" />
+      </li>
+      <li>
+        <strong>grid_3: </strong>
+        {# You can pull out a lot more information from the gallery property. Info here: #}
+        {# http://www.webhook.com/docs/widget-template-reference/#image #}
+        <ul>
+          {% for image in item.grid_3 %}
+            <li>
+              {# You can get the raw image url by accessing image.url #}
+              <img src="{{ image|imageSize(200, 200) }}">
+              <div>{{ image.caption }}</div>
+            </li>
+          {% endfor %}
+        </ul>
+      </li>
+      <li>
+        <strong>carousel_3: </strong>
+        {# You can pull out a lot more information from the gallery property. Info here: #}
+        {# http://www.webhook.com/docs/widget-template-reference/#image #}
+        <ul>
+          {% for image in item.carousel_3 %}
+            <li>
+              {# You can get the raw image url by accessing image.url #}
+              <img src="{{ image|imageSize(200, 200) }}">
+              <div>{{ image.caption }}</div>
+            </li>
+          {% endfor %}
+        </ul>
+      </li>
+      <li>
+        <strong>videogrid: </strong>
+        {# Loop of your Repeatable Form items. Remember, you can sort the order in your CMS if you need. #}
+        <ul>
+        {% for row in item.videogrid %}
+            <li>
+              <strong>WYSIWYG text: </strong>
+              {{ row.wysiwyg_text|safe }}
+            </li>
+        {% endfor %}
+        </ul>
+      </li>
+      <li>
+        <strong>carousel_4: </strong>
+        {# You can pull out a lot more information from the gallery property. Info here: #}
+        {# http://www.webhook.com/docs/widget-template-reference/#image #}
+        <ul>
+          {% for image in item.carousel_4 %}
+            <li>
+              {# You can get the raw image url by accessing image.url #}
+              <img src="{{ image|imageSize(200, 200) }}">
+              <div>{{ image.caption }}</div>
+            </li>
+          {% endfor %}
+        </ul>
+      </li>
+      <li>
+        <strong>carousel_5: </strong>
+        {# You can pull out a lot more information from the gallery property. Info here: #}
+        {# http://www.webhook.com/docs/widget-template-reference/#image #}
+        <ul>
+          {% for image in item.carousel_5 %}
+            <li>
+              {# You can get the raw image url by accessing image.url #}
+              <img src="{{ image|imageSize(200, 200) }}">
+              <div>{{ image.caption }}</div>
+            </li>
+          {% endfor %}
+        </ul>
+      </li>
+      <li>
+        <strong>heroimage_3: </strong>
+        {# You can pull out a lot more information from the image property. Info here: #}
+        {# http://www.webhook.com/docs/widget-template-reference/#image #}
+        <img src="{{ item.heroimage_3|imageSize(200, 200) }}" />
+      </li>
+      <li>
+        <strong>carousel_6: </strong>
+        {# You can pull out a lot more information from the gallery property. Info here: #}
+        {# http://www.webhook.com/docs/widget-template-reference/#image #}
+        <ul>
+          {% for image in item.carousel_6 %}
+            <li>
+              {# You can get the raw image url by accessing image.url #}
+              <img src="{{ image|imageSize(200, 200) }}">
+              <div>{{ image.caption }}</div>
+            </li>
+          {% endfor %}
+        </ul>
+      </li>
+  </ul>
+{% endblock %}

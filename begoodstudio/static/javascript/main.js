@@ -1,21 +1,33 @@
 
 	$(document).ready(function() {
-		$('.carousel_container').slick({
+		
+    /*
+    $('.carousel_container').slick({
         arrows:false,
         adaptiveHeight:true,
       });
-
+    
+    
       $('.previous').click(function(){
         $('.carousel_container').slick('slickPrev');
       });
 
       $('.next').click(function(){
         $('.carousel_container').slick('slickNext');
+      });
+    */
+
+    $('.carousel_container').each(function (idx, item) {
+        var carouselId = "carousel" + idx;
+        this.id = carouselId;
+        $(this).slick({
+            slide: "#" + carouselId +" .carousel_image",
+            appendArrows: "#" + carouselId + " .prev_next",
+            prevArrow: '<a>Previous</a>',
+            nextArrow: '<a>Next</a>'
+        });
     });
 
-	});
-
-  $(document).ready(function() {
     function setHeight() {
       windowHeight = $(window).innerHeight();
       $('#maincontainer').css('min-height', windowHeight);
@@ -23,8 +35,14 @@
     setHeight();
     
     $(window).resize(function() {
-      setHeight();
+        setHeight();
     });
 
-    $("#maincontainer").load("/assettest");
+     $('#projectlist a').click(function(){
+        $('#maincontainer').css({
+            display: 'block'
+        });
+        $("#maincontainer").load($(this).attr('href'));
+         return false;
+    });
   });
