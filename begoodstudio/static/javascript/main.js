@@ -1,21 +1,5 @@
 
 	$(document).ready(function() {
-		
-    /*
-    $('.carousel_container').slick({
-        arrows:false,
-        adaptiveHeight:true,
-      });
-    
-    
-      $('.previous').click(function(){
-        $('.carousel_container').slick('slickPrev');
-      });
-
-      $('.next').click(function(){
-        $('.carousel_container').slick('slickNext');
-      });
-    */
 
     $('.carousel_container').each(function (idx, item) {
         var carouselId = "carousel" + idx;
@@ -24,7 +8,7 @@
             slide: "#" + carouselId +" .carousel_image",
             appendArrows: "#" + carouselId + " .prev_next",
             prevArrow: '<a>Previous</a>',
-            nextArrow: '<a>Next</a>'
+            nextArrow: '<a>Next</a>',
         });
     });
 

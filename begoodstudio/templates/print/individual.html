@@ -15,64 +15,38 @@
   <p><a href="{{ url('print') }}">View a list of all print</a></p>
   <h1>{{ item.name }}</h1>
   <ul>
-      <li>
-        <strong>Name: </strong>
-        {{ item.name }}
-      </li>
-      <li>
-        <strong>Create Date: </strong>
-        {# Format the date. You can use PHP's date function to format as needed. http://php.net/manual/en/function.date.php #}
-        {{ item.create_date|date('F d Y') }}
-      </li>
-      <li>
-        <strong>Last Updated: </strong>
-        {# Format the date. You can use PHP's date function to format as needed. http://php.net/manual/en/function.date.php #}
-        {{ item.last_updated|date('F d Y') }}
-      </li>
-      <li>
-        <strong>Publish Date: </strong>
-        {# Format the date. You can use PHP's date function to format as needed. http://php.net/manual/en/function.date.php #}
-        {{ item.publish_date|date('F d Y') }}
-      </li>
-      <li>
-        <strong>print_carousel1: </strong>
-        {# You can pull out a lot more information from the gallery property. Info here: #}
-        {# http://www.webhook.com/docs/widget-template-reference/#image #}
-        <ul>
-          {% for image in item.print_carousel1 %}
-            <li>
-              {# You can get the raw image url by accessing image.url #}
-              <img src="{{ image|imageSize(200, 200) }}">
-              <div>{{ image.caption }}</div>
-            </li>
-          {% endfor %}
-        </ul>
-      </li>
-      <li>
-        <strong>print_imageleft: </strong>
-        {# You can pull out a lot more information from the image property. Info here: #}
-        {# http://www.webhook.com/docs/widget-template-reference/#image #}
-        <img src="{{ item.print_imageleft|imageSize(200, 200) }}" />
-      </li>
-      <li>
-        <strong>print_imageright: </strong>
-        {# You can pull out a lot more information from the image property. Info here: #}
-        {# http://www.webhook.com/docs/widget-template-reference/#image #}
-        <img src="{{ item.print_imageright|imageSize(200, 200) }}" />
-      </li>
-      <li>
-        <strong>print_carousel2: </strong>
-        {# You can pull out a lot more information from the gallery property. Info here: #}
-        {# http://www.webhook.com/docs/widget-template-reference/#image #}
-        <ul>
+ 
+      <div class="carousel_container col-xs-12">
+
+          <div class="prev_next">
+          </div>     
+
+                {% for image in item.print_carousel1 %}
+                <div class="carousel_image col-xs-12">  
+                    <img src="{{ image|imageSize(1200, 1200) }}">
+                    {{ image.caption }}
+                </div>
+                {% endfor %}
+      </div>
+
+
+
+      <div class="imagehalf col-xs-6">
+        <img src="{{ item.print_imageleft|imageSize(1200, 1200) }}" />
+      </div>
+
+      <div class="imagehalf col-xs-6">
+        <img src="{{ item.print_imageright|imageSize(1200, 1200) }}" />
+      </div>
+
+      <div class="carousel_container col-xs-12">
+
+          <div class="prev_next">
+          </div>  
           {% for image in item.print_carousel2 %}
-            <li>
-              {# You can get the raw image url by accessing image.url #}
-              <img src="{{ image|imageSize(200, 200) }}">
-              <div>{{ image.caption }}</div>
-            </li>
+            <div class="carousel_image col-xs-12">
+              <img src="{{ image|imageSize(1200, 1200) }}">
+              {{ image.caption }}
+            </div>
           {% endfor %}
-        </ul>
-      </li>
-  </ul>
 {% endblock %}

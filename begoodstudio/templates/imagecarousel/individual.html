@@ -13,9 +13,9 @@
 {# This sets our page <title>. It will append this imagecarousel's name to the site title defined in base.html #}
 
 {% block title %}{% parent %} - {{ item.name }}{% endblock %}
+{% block content %}
 
-<div class="projectContainer col-xs-12">
-  {% block content %}
+<div id="contentcontainer row">
     <p><a href="{{ url('imagecarousel') }}">View a list of all imagecarousel</a></p>
 
         <li>
@@ -29,21 +29,20 @@
           {# Loop of your Repeatable Form items. Remember, you can sort the order in your CMS if you need. #}
 
             {% for row in item.carousel %}
-
-
-              <div class="carousel_container">
+              <div class="carousel_container col-xs-12 col-lg-6">
 
                 <div class="prev_next">
                 </div>
 
                   {% for image in row.gallery %}
-                    <div class="carousel_image col-xs-10 col-xs-offset-1">   
-                      <img src="{{ image|imageSize(200, 200) }}">
+                    <div class="carousel_image col-xs-12">   
+                      <img src="{{ image|imageSize(1200, 1200) }}">
                       {{ image.caption }}
                     </div>    
                   {% endfor %}      
               </div>
             {% endfor %}
-
-  {% endblock %}
 </div>
+
+{% endblock %}
+

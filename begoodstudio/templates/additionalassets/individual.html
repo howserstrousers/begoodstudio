@@ -14,11 +14,11 @@
 
 
   {% block content %}
-  <div id="imageCarousel">
+<div id="contentcontainer">
     <p><a href="{{ url('additionalassets') }}">View a list of all additionalassets</a></p>
     <h1>{{ item.name }}</h1>
 
-      <div class="videogrid clearfix">
+      <div class="videogrid clearfix col-xs-12">
           {% for row in item.videogrid %}
               <div class="vgrid_single">
                 {{ row.video|safe }}
@@ -27,12 +27,13 @@
       </div>
 
           {% for row in item.imagecarousel %}
-                  <div class="carousel_container">
+                  <div class="carousel_container col-xs-12">
 
                     <div class="prev_next">
                     </div>
+
                     {% for image in row.carousel %}
-                        <div class="carousel_image col-xs-10 col-xs-offset-1">  
+                        <div class="carousel_image col-xs-12">  
                           <img src="{{ image|imageSize(1200, 1200) }}">
                           {{ image.caption }}
                         </div>
@@ -41,22 +42,22 @@
 
           {% endfor %}
           
-        <div class="postersingle">
+        <div class="postersingle col-xs-12">
           <img src="{{ item.poster|imageSize(1200, 1200) }}" />
         </div>
 
 
-            <div class="carousel_container">
+            <div class="carousel_container col-xs-12">
 
                         <div class="prev_next">
                         </div>
 
                 {% for image in item.carousel2 %}
-                    <div class="carousel_image col-xs-10 col-xs-offset-1"> 
+                    <div class="carousel_image col-xs-12"> 
                       <img src="{{ image|imageSize(1200, 1200) }}">
                       {{ image.caption }}
                     </div>
                 {% endfor %}
-              </div>
-  </div>
+            </div>
+</div>
   {% endblock %}
