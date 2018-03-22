@@ -18,9 +18,8 @@
           
           <div class="video">
             {% for row in item.video %}
-                      {{ row.wysiwyg_text|safe }}
+                {{ row.wysiwyg_text|safe }}
             {% endfor %}
-
           </div>
 </div>
 {% endblock %}

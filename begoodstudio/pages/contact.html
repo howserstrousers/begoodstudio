@@ -12,14 +12,14 @@
 {# This sets our page <title>. It will append this contact's name to the site title defined in base.html #}
 {% block title %}{% parent %} - {{ cms.contact.name }}{% endblock %}
 {% block content %}
+<div class="contactcontainer">
   <h1>{{ cms.contact.name }}</h1>
-  <ul>
-      <li>
+    <div class="contactemail">
         <strong></strong>
         {{ cms.contact.email }}
-      </li>
-      <li>
+    </div>
+    <div class="contactaddress">
         {{ cms.contact.wysiwyg_text|safe }}
-      </li>
-  </ul>
+    </div>
+</div>
 {% endblock %}

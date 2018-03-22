@@ -89,22 +89,29 @@ ul, li {
 	}
 
 	.headerlogo {
-		width: 15%;
+		width: 10%;
 		display: inline-block;
 		float:left;
 	}
 
 	.menu{
 		margin-top: 0;
+		width:75%;
+		float:right;
 	}
 
 	.menu div{
-		float:right;
-		padding-left: 22%;
+		width:20%;
+		padding-left: 12%;
+		display: inline-block;
+	}
+
+	.menu div p{
+		display: inline-block;
 	}
 
 		/* menu collapse */
-		@media only screen and (min-width: 1080px){
+		@media only screen and (min-width: 1350px){
 			.menu div{
 				
 			}
@@ -135,32 +142,82 @@ ul, li {
 
 /*ABOUT*/
 	.aboutcontainer{
-		padding-left: 5%;
-		padding-right: 5%;
+		padding-left: 8%;
+		padding-right: 6%;
+		position: absolute;
+		top:20vh;
+		font-size: 1.6rem;
 	}
 
 	.aboutdescription{
-		margin-bottom: 2%;
+		margin-bottom: 7%;
+		font-size:1.3rem;
+
 	}
 /*END ABOUT*/
 
-/*MainContainer*/
+/*CONTACT*/
+	.contactcontainer{
+		padding-left: 15%;
+		padding-right: 5%;
+		position: absolute;
+		top:20vh;
+		font-size: 1.6rem;
+	}
+
+	.contactemail{
+		margin-bottom:7%;
+	}
+/*END CONTACT*/
+
+/*MainContainers*/
+	#fillerclose{
+		float:left;
+		background-color: rgba(10,123,5,1)
+	}
+
 	#maincontainer{
 		display: none;
 		height:100%;
-		width:65%;
+		width:69.5%;
 		position:absolute;
 		top:0;
 		right:0;
 		overflow: auto;
 
-		background-color: pink;
+		background-color: rgba(10,123,5,1);
 
 	}
 
 	#contentcontainer{
 		width:100;
 		overflow: hidden;
+	}
+
+	#aboutcontainer{
+		display: none;
+		height:100%;
+		width:46%;
+		position:absolute;
+		top:0;
+		right:0;
+		overflow: auto;
+
+		background-color: rgba(255,255,0,1);;
+
+	}
+
+	#contactcontainer{
+		display: none;
+		height:100%;
+		width:23%;
+		position:absolute;
+		top:0;
+		right:0;
+		overflow: auto;
+
+		background-color: rgba(0,255,0,1);;
+
 	}
 /*END MainContainer*/
 
@@ -176,6 +233,10 @@ ul, li {
 
 
 /*TEMPLATES*/
+		.video{
+			margin:0 auto;
+		}
+
 		.videogrid{
 			margin:0 auto;
 			border:1px solid blue;
@@ -197,7 +258,7 @@ ul, li {
 
 		.imagehalf{
 			margin: 0 auto;
-			text-align: center;
+			text-align: center
 		}
 /*END TEMPLATES*/
 

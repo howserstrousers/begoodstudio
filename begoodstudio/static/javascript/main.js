@@ -14,7 +14,7 @@
 
     function setHeight() {
       windowHeight = $(window).innerHeight();
-      $('#maincontainer').css('min-height', windowHeight);
+      $('#maincontainer #fillercontainer').css('min-height', windowHeight);
     };
     setHeight();
     
@@ -27,6 +27,22 @@
             display: 'block'
         });
         $("#maincontainer").load($(this).attr('href'));
+         return false;
+    });
+
+    $('#abouttrigger a').click(function(){
+        $('#aboutcontainer').css({
+            display: 'block'
+        });
+        $("#aboutcontainer").load($(this).attr('href'));
+         return false;
+    });
+
+    $('#contacttrigger a').click(function(){
+        $('#contactcontainer').css({
+            display: 'block'
+        });
+        $("#contactcontainer").load($(this).attr('href'));
          return false;
     });
   });
