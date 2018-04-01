@@ -12,6 +12,7 @@
 {# This sets our page <title>. It will append this print's name to the site title defined in base.html #}
 {% block title %}{% parent %} - {{ item.name }}{% endblock %}
 {% block content %}
+<div id="contentcontainer">
   <p><a href="{{ url('print') }}">View a list of all print</a></p>
   <h1>{{ item.name }}</h1>
   <ul>
@@ -49,4 +50,5 @@
               {{ image.caption }}
             </div>
           {% endfor %}
+</div>
 {% endblock %}

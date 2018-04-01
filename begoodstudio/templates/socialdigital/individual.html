@@ -12,6 +12,7 @@
 {# This sets our page <title>. It will append this socialdigital's name to the site title defined in base.html #}
 {% block title %}{% parent %} - {{ item.name }}{% endblock %}
 {% block content %}
+<div id="contentcontainer">
   <p><a href="{{ url('socialdigital') }}">View a list of all socialdigital</a></p>
   <h1>{{ item.name }}</h1>
   <ul>
@@ -46,4 +47,5 @@
               {{ image.caption }}
             </div>
           {% endfor %}
+</div>
 {% endblock %}

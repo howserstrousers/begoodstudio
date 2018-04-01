@@ -12,13 +12,15 @@
 {# This sets our page <title>. It will append this posters's name to the site title defined in base.html #}
 {% block title %}{% parent %} - {{ item.name }}{% endblock %}
 {% block content %}
+<div id="contentcontainer">
   <p><a href="{{ url('posters') }}">View a list of all posters</a></p>
   <h1>{{ item.name }}</h1>
         {% for row in item.image %}
 
           <div class="postersingle col-xs-12">
-                <img src="{{ row.image|imageSize(200, 200) }}" />
+                <img src="{{ row.image|imageSize(2000, 2000) }}" />
           </div>
           
         {% endfor %}
+</div>
 {% endblock %}

@@ -15,7 +15,7 @@
 {% block title %}{% parent %} - {{ item.name }}{% endblock %}
 {% block content %}
 
-<div id="contentcontainer row">
+<div id="contentcontainer">
     <p><a href="{{ url('imagecarousel') }}">View a list of all imagecarousel</a></p>
 
         <li>
@@ -32,6 +32,7 @@
               <div class="carousel_container col-xs-12 col-lg-6">
 
                 <div class="prev_next">
+                  
                 </div>
 
                   {% for image in row.gallery %}

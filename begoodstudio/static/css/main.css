@@ -105,6 +105,8 @@ ul, li {
 		padding-bottom:8.5%;	
 		padding-left:2.5%;
 		padding-right:2.5%;
+		position: relative;
+		z-index: 10;
 
 		font-family: suissebook, sans-serif !important;
 	}
@@ -116,6 +118,7 @@ ul, li {
 
 	/* projectlist HEADER */
 		.header{
+
 		}
 	/* END projectlist HEADER */
 
@@ -210,6 +213,7 @@ ul, li {
 		top:0;
 		left:0;
 		overflow: auto;
+		z-index:100;
 
 		background-color: black;
 		opacity: 0;
@@ -243,7 +247,7 @@ ul, li {
 		display: none;
 		height:100%;
 		padding-left: 5%;
-		position:relative;
+		position:absolute;
 		top:0;
 		right:0;
 		overflow: auto;
@@ -253,13 +257,17 @@ ul, li {
 
 	}
 
+
 	#contentcontainer{
 		overflow: hidden;
-		padding-top: 7%;
-		margin-left: -7.5%;
+		padding-top: 10%;
 
 
 	}
+
+		#maincontainer #contentcontainer{
+			margin-left: -7.5%;
+		}
 
 	#contentcontainer a{
 		color:white;
@@ -299,9 +307,23 @@ ul, li {
 	overflow: hidden;
 }
 
-.carousel_image{
-	text-align: center
+.prev_next{
+	width:100%;
+	position: absolute;
+	z-index: 100;
+	text-align: center;
 }
+	.prev_next a .left{
+		float:left;
+	}	
+
+.carousel_image{
+	margin: 0 auto;
+	text-align: center;
+}
+	.carousel_image img{
+		width:100%;
+	}
 
 
 /*TEMPLATES*/
@@ -331,6 +353,10 @@ ul, li {
 			margin: 0 auto;
 			text-align: center
 		}
+			.imagehalf img{
+				margin: 0 auto;
+				width: 100%;
+			}
 /*END TEMPLATES*/
 
 
