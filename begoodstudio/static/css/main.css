@@ -45,8 +45,21 @@
 	}
 /*END CSS RESET */
 
+@font-face {
+    font-family: suissebook;
+    src: url(SuisseIntl-Book-WebM.woff);
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: suissethin;
+    src: url(SuisseIntl-Thin-WebM.woff);
+    font-weight: normal;
+}
+
 html{
 	font-size: 12px;
+
 }
 	/* menu collapse */
 		@media only screen and (min-width: 1080px){
@@ -57,6 +70,7 @@ html{
 
 
 body {
+	font-family: suissethin, sans-serif !important;
 }
 
 a {
@@ -77,6 +91,11 @@ ul, li {
 	list-style: none;
 }
 
+.unicode{
+	height:70%;
+	width:70%;
+}
+
 
 
 /* HEADER */
@@ -86,36 +105,20 @@ ul, li {
 		padding-bottom:8.5%;	
 		padding-left:2.5%;
 		padding-right:2.5%;
+
+		font-family: suissebook, sans-serif !important;
 	}
 
 	.headerlogo {
-		width: 10%;
 		display: inline-block;
 		float:left;
 	}
 
-	.menu{
-		margin-top: 0;
-		width:75%;
-		float:right;
-	}
-
-	.menu div{
-		width:20%;
-		padding-left: 12%;
-		display: inline-block;
-	}
-
-	.menu div p{
-		display: inline-block;
-	}
-
-		/* menu collapse */
-		@media only screen and (min-width: 1350px){
-			.menu div{
-				
-			}
+	/* projectlist HEADER */
+		.header{
 		}
+	/* END projectlist HEADER */
+
 /* END HEADER */
 
 
@@ -136,87 +139,156 @@ ul, li {
 
 		display: inline-block;
 		text-decoration: none;
+		color: #f05058;
+	}
+
+	#projectlist a:nth-child(odd) {
+    	color: #6ec2dc;
 	}
 
 /*END Projects List*/
 
 /*ABOUT*/
 	.aboutcontainer{
-		padding-left: 8%;
-		padding-right: 6%;
 		position: absolute;
 		top:20vh;
 		font-size: 1.6rem;
+		color:white;
 	}
 
 	.aboutdescription{
 		margin-bottom: 7%;
 		font-size:1.3rem;
-
 	}
+ 
+	.aboutdescription p{
+		width:90% !important;
+	}
+
 /*END ABOUT*/
 
 /*CONTACT*/
 	.contactcontainer{
-		padding-left: 15%;
-		padding-right: 5%;
 		position: absolute;
 		top:20vh;
-		font-size: 1.6rem;
+		margin-left:-7.5%;
+		color:white;
 	}
 
 	.contactemail{
-		margin-bottom:7%;
+		margin-bottom: 7%;
+		word-wrap: break-word;
+
 	}
+
+	.contactaddress{
+		word-wrap: break-word;
+
+	}
+
 /*END CONTACT*/
 
+/*CASE STUDY*/
+	.cslist{
+		position: absolute;
+		top:20vh;
+		font-size: 1.6rem;
+		color:white;
+	}
+
+	.cslist a:visited{
+		color:white;
+	}
+/*END CASE STUDY*/
+
+
 /*MainContainers*/
-	#fillerclose{
-		float:left;
-		background-color: rgba(10,123,5,1)
+	#ec1{
+		display: none;
+		height:100%;
+		position:absolute;
+		top:0;
+		left:0;
+		overflow: auto;
+
+		background-color: black;
+		opacity: 0;
+	}
+
+	#ec2{
+		display: none;
+		height:100%;
+		position:absolute;
+		top:0;
+		left:0;
+		overflow: auto;
+
+		background-color: black;
+		opacity: 0;
+	}
+
+	#ec3{
+		display: none;
+		height:100%;
+		position:absolute;
+		top:0;
+		left:0;
+		overflow: auto;
+
+		background-color: black;
+		opacity: 0;
 	}
 
 	#maincontainer{
 		display: none;
 		height:100%;
-		width:69.5%;
-		position:absolute;
+		padding-left: 5%;
+		position:relative;
 		top:0;
 		right:0;
 		overflow: auto;
 
-		background-color: rgba(10,123,5,1);
+		background-color: #6ec2dc;
+		color:white;
 
 	}
 
 	#contentcontainer{
-		width:100;
 		overflow: hidden;
+		padding-top: 7%;
+		margin-left: -7.5%;
+
+
+	}
+
+	#contentcontainer a{
+		color:white;
 	}
 
 	#aboutcontainer{
 		display: none;
 		height:100%;
-		width:46%;
+		padding-left: 5%;
 		position:absolute;
 		top:0;
 		right:0;
 		overflow: auto;
 
-		background-color: rgba(255,255,0,1);;
+		background-color: #f05058;
 
 	}
 
 	#contactcontainer{
 		display: none;
 		height:100%;
-		width:23%;
+		padding-left: 8.5%;
 		position:absolute;
 		top:0;
 		right:0;
 		overflow: auto;
 
-		background-color: rgba(0,255,0,1);;
+		background-color: black;
+		color:white;
 
 	}
 /*END MainContainer*/
@@ -239,7 +311,6 @@ ul, li {
 
 		.videogrid{
 			margin:0 auto;
-			border:1px solid blue;
 		}
 
 		.vgrid_single{

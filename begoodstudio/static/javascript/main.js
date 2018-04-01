@@ -7,42 +7,99 @@
         $(this).slick({
             slide: "#" + carouselId +" .carousel_image",
             appendArrows: "#" + carouselId + " .prev_next",
-            prevArrow: '<a>Previous</a>',
-            nextArrow: '<a>Next</a>',
+            prevArrow: '<a>&#8249</a>',
+            nextArrow: '<a>&#8250</a>',
         });
     });
 
     function setHeight() {
       windowHeight = $(window).innerHeight();
-      $('#maincontainer #fillercontainer').css('min-height', windowHeight);
+      $('#maincontainer').css('min-height', windowHeight);
     };
     setHeight();
     
     $(window).resize(function() {
         setHeight();
     });
-
-     $('#projectlist a').click(function(){
-        $('#maincontainer').css({
+//Main container and close
+    $('#projectlist a').click(function(){
+        $('#maincontainer, #ec1').css({
             display: 'block'
         });
         $("#maincontainer").load($(this).attr('href'));
          return false;
     });
 
+    $('#ec1').click(function(){
+        $('#maincontainer, #ec1').css({
+            display: 'none'
+        });
+    });
+
+//Case studies Main container and close
+    $('#cstrigger a').click(function(){
+        $('#maincontainer , #ec1').css({
+            display: 'block'
+        });
+        $("#maincontainer").load($(this).attr('href'));
+         return false;
+    });
+
+    $('.cslist a').click(function(){
+        $('#maincontainer , #ec1').css({
+            display: 'block'
+        });
+        $("#maincontainer").load($(this).attr('href'));
+         return false;
+    });
+//About container and close
     $('#abouttrigger a').click(function(){
-        $('#aboutcontainer').css({
+        $('#aboutcontainer, #ec2').css({
             display: 'block'
         });
         $("#aboutcontainer").load($(this).attr('href'));
          return false;
     });
 
+    $('#ec2').click(function(){
+        $('#aboutcontainer, #ec2').css({
+            display: 'none'
+        });
+    });
+
+//Contact container and close
     $('#contacttrigger a').click(function(){
-        $('#contactcontainer').css({
+        $('#contactcontainer, #ec3').css({
             display: 'block'
         });
         $("#contactcontainer").load($(this).attr('href'));
          return false;
     });
+
+    $('#ec3').click(function(){
+        $('#contactcontainer, #ec3').css({
+            display: 'none'
+        });
+    });
+// URL load
+    var setCurrentPage = function(url) {
+    $('#maincontainer').html(url || "/");
+    $("##projectlist a[href='" + url + "']").fadeTo(500, 0.3);
+    };
+
+    $('#projectlist a').click(function(e){
+        e.preventDefault();
+        var targetUrl = $(this).attr('href'),
+            targetTitle = $(this).attr('title');
+        
+        $("#projectlist a[href='" + window.location.pathname + "']").fadeTo(500, 1.0);
+        
+        window.history.pushState({url: "" + targetUrl + ""}, targetTitle, targetUrl);
+        setCurrentPage(targetUrl);
+    });
+
+    window.onpopstate = function(e) {
+        $("#menu-nav a").fadeTo('fast', 1.0);
+        setCurrentPage(e.state ? e.state.url : null);
+    };
   });

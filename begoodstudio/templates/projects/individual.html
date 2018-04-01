@@ -14,28 +14,36 @@
 {% block title %}{% parent %} - {{ item.name }}{% endblock %}
 {% block content %}
 
+<div class="header">
 {% block header %}
         {% include "templates/partials/header.html" %}
 {% endblock %}
-
-<div id="fillerclose">
 </div>
 
-<div id="maincontainer">
+
+
+<div id="ec1" class="col-xs-4" onclick="window.location.href = '/projects/all-projects/';">
+</div>
+<div id="ec2" class="col-xs-7" onclick="window.location.href = '/projects/all-projects/';">
+</div>
+<div id="ec3" class="col-xs-9" onclick="window.location.href = '/projects/all-projects/';">
 </div>
 
-<div id="aboutcontainer">
-</div>
+  <div id="maincontainer" class="col-xs-8 col-xs-offset-4">
+  </div>
 
-<div id="contactcontainer">
-</div>
+  <div id="aboutcontainer" class="col-xs-5 col-xs-offset-7">
+  </div>
+
+  <div id="contactcontainer" class="col-xs-2 col-xs-offset-9">
+  </div>
 
 <div class="projectcontainer">
   <div id="projectlist">
     {% for row in item.grid %}
       <a id="project" href="/{{ row.link }}">
         <p>
-          {{ row.title }},
+          {{ row.title }}<span class="unicode">&#x25AA;</span>
         </p>
       </a>
     {% endfor %}
