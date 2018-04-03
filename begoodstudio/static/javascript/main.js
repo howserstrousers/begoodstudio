@@ -81,10 +81,11 @@
             display: 'none'
         });
     });
+
 // URL load
     var setCurrentPage = function(url) {
     $('#maincontainer').html(url || "/");
-    $("##projectlist a[href='" + url + "']").fadeTo(500, 0.3);
+    $("#projectlist a[href='" + url + "']").fadeTo(500);
     };
 
     $('#projectlist a').click(function(e){
