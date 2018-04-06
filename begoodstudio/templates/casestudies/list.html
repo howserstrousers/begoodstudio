@@ -28,20 +28,17 @@
 
   {# This is how you set pagination. It's always important to do this after your sort. #}
   {% set data = paginate(data, 5) %}
-  <div class="cslist">
-  <!--
-    <h1>List of casestudies</h1>
-  -->
 
-    {# This forloop can use any data from http:localhost:2000/cms/#/form/casestudies/ #}
-    <ul>
-      {% for object in data %}
-        <li><a href="{{ url(object) }}">{{ object.name }}</a></li>
-      {% endfor %}
-    </ul>
+  <h1>List of casestudies</h1>
 
-    {# The actual pagination template, feel free to edit or replace the default one. #}
-    {% include "templates/partials/paginator.html" %}
-  </div>
+  {# This forloop can use any data from http:localhost:2000/cms/#/form/casestudies/ #}
+  <ul>
+    {% for object in data %}
+      <li><a href="{{ url(object) }}">{{ object.name }}</a></li>
+    {% endfor %}
+  </ul>
+
+  {# The actual pagination template, feel free to edit or replace the default one. #}
+  {% include "templates/partials/paginator.html" %}
 
 {% endblock %}

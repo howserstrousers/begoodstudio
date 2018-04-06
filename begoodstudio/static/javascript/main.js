@@ -36,6 +36,12 @@
         });
     });
 
+    $(".headercontainer a").click( function() { 
+          $(".headercontainer a").css("color", "black");
+          $(this).css("color", "white");
+    });
+    
+
 //Case studies Main container and close
     $('#cstrigger a').click(function(){
         $('#maincontainer , #ec1').css({

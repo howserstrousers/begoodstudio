@@ -16,18 +16,15 @@
 {% block content %}
 
 <div id="contentcontainer">
+    <p><a href="{{ url('imagecarousel') }}">View a list of all imagecarousel</a></p>
 
-        <div class="projecttitle">
-          <h1>
-            {{ item.name }}
-          </h1>
-        </div>
+        <h1>
+          {{ item.name }}
+        </h1>
 
-        <div class="projectdescription">
-          <p>
-            {{ item.description }}
-          </p>
-        </div>
+        <p>
+          {{ item.description }}
+        </p>
 
         <br>
 
@@ -72,3 +69,29 @@
 </div>
 
 {% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
