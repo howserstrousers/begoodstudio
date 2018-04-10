@@ -1,5 +1,4 @@
-
-	$(document).ready(function() {
+$(document).ready(function() {
 
     $('.carousel_container').each(function (idx, item) {
         var carouselId = "carousel" + idx;
@@ -36,17 +35,23 @@
         });
     });
 
-    $(".headercontainer a").click( function() { 
-          $(".headercontainer a").css("color", "black");
+    $('.headercontainer a').click( function() { 
+          $('#cstrigger, #abouttrigger, #contacttrigger').css("color", "black");
           $(this).css("color", "white");
     });
-    
 
+    $('#projectlist a').click(function(){
+        $('#projectlist a').css({
+            position: 'static' 
+        });
+    });
+    
 //Case studies Main container and close
     $('#cstrigger a').click(function(){
         $('#maincontainer , #ec1').css({
             display: 'block'
         });
+
         $("#maincontainer").load($(this).attr('href'));
          return false;
     });
@@ -58,6 +63,13 @@
         $("#maincontainer").load($(this).attr('href'));
          return false;
     });
+
+    $('#cstrigger a').click(function(){
+        $('#projectlist a').css({
+            position: 'static'
+        });
+    });
+
 //About container and close
     $('#abouttrigger a').click(function(){
         $('#aboutcontainer, #ec2').css({
@@ -73,11 +85,18 @@
         });
     });
 
+    $('#abouttrigger a').click(function(){
+        $('#projectlist a').css({
+            position: 'static'
+        });
+    });
+
 //Contact container and close
     $('#contacttrigger a').click(function(){
         $('#contactcontainer, #ec3').css({
             display: 'block'
         });
+
         $("#contactcontainer").load($(this).attr('href'));
          return false;
     });
@@ -85,6 +104,12 @@
     $('#ec3').click(function(){
         $('#contactcontainer, #ec3').css({
             display: 'none'
+        });
+    });
+
+    $('#contacttrigger a').click(function(){
+        $('#projectlist a').css({
+            position: 'static'
         });
     });
 
