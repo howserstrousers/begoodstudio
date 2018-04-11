@@ -29,17 +29,43 @@ $(document).ready(function() {
          return false;
     });
 
-    $('#ec1').click(function(){
+    $('#ec1, #abouttrigger a, #contacttrigger a').click(function(){
         $('#maincontainer, #ec1').css({
             display: 'none'
         });
     });
 
+    $('#contacttrigger a').click(function(){
+        $('#aboutcontainer, #ec2').css({
+            display: 'none'
+        });
+    });
+
+    $('#abouttrigger a').click(function(){
+        $('#contactcontainer, #ec3').css({
+            display: 'none'
+        });
+    });
+
+    $('#cstrigger a').click(function(){
+        $('#aboutcontainer, #ec2, #contactcontainer, #ec3').css({
+            display: 'none'
+        });
+    });
+
+
+//nav color change
     $('.headercontainer a').click( function() { 
           $('#cstrigger, #abouttrigger, #contacttrigger').css("color", "black");
           $(this).css("color", "white");
     });
 
+    $('#abouttrigger').click( function() { 
+          $('#cstrigger, #contacttrigger').css("color", "black");
+          $(this).css("color", "white");
+    });
+
+//project list move to bg
     $('#projectlist a').click(function(){
         $('#projectlist a').css({
             position: 'static' 
@@ -113,7 +139,7 @@ $(document).ready(function() {
         });
     });
 
-// URL load
+//URL load
     var setCurrentPage = function(url) {
     $('#maincontainer').html(url || "/");
     $("#projectlist a[href='" + url + "']").fadeTo(500);
@@ -135,3 +161,15 @@ $(document).ready(function() {
         setCurrentPage(e.state ? e.state.url : null);
     };
   });
+
+//Main container fixed
+
+    var fixed = document.getElementById('projectlist');
+    fixed.addEventListener('touchmove', function(e) {
+            e.preventDefault();
+    }, false);
+
+//Lazy load
+    $(function() {
+        $('.lazy').Lazy();
+    });

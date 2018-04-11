@@ -39,7 +39,6 @@
             {# You can get the raw image url by accessing image.url #}
             <div class="carousel_image col-xs-12"> 
             <img src="{{ image|imageSize(1200, 1200) }}">
-            {{ image.caption }}
           </div>
         {% endfor %}
     </div>
@@ -79,7 +78,6 @@
                 {% for image in row.gallery %}
                   <div class="carousel_image col-xs-12"> 
                     <img src="{{ image|imageSize(1200, 1200) }}">
-                    <div>{{ image.caption }}</div>
                   </div>
                 {% endfor %}
           </div>
@@ -109,7 +107,6 @@
             {# You can get the raw image url by accessing image.url #}
             <div class="carousel_image col-xs-12"> 
             <img src="{{ image|imageSize(1200, 1200) }}">
-            {{ image.caption }}
           </div>
         {% endfor %}
     </div>
@@ -128,7 +125,6 @@
             {# You can get the raw image url by accessing image.url #}
             <div class="carousel_image col-xs-12"> 
             <img src="{{ image|imageSize(1200, 1200) }}">
-            {{ image.caption }}
           </div>
         {% endfor %}
     </div>
@@ -174,7 +170,6 @@
         {% for image in item.other_assets_carousel_3 %}
             <div class="carousel_image col-xs-12"> 
               <img src="{{ image|imageSize(1200, 1200) }}">
-              {{ image.caption }}
             </div>
         {% endfor %}
     </div>
