@@ -15,22 +15,43 @@
 		</a>
 	</div>
 
-	<div id="cstrigger" class="col-xs-2 col-xs-offset-1">
-		<a href="/casestudies">
-			<p>Case Studies</p>
-		</a>
-	</div>
+	<div class="topnav" id="myTopnav">
+		<div>
+			<a href="javascript:void(0);" style="font-size:18px;" class="icon" onclick="myFunction()">
+				&#9776;
+			</a>
+		</div>
 
-	<div id="abouttrigger" class="col-xs-2 col-xs-offset-1">
-		<a href="/about">
-			<p>About</p>
-		</a>
-	</div>
+		<div class="mobilenavmargin">
+			<div id="cstrigger" class="col-md-2 col-md-offset-1">
+				<a href="/casestudies">
+					<p>Case Studies</p>
+				</a>
+			</div>
 
-	<div id="contacttrigger" class="col-xs-2 col-xs-offset-1">
-		<a href="/contact">
-			<p>Contact Us</p>
-		</a>
+			<div id="abouttrigger" class="col-md-2 col-md-offset-1">
+				<a href="/about">
+					<p>About</p>
+				</a>
+			</div>
+
+			<div id="contacttrigger" class="col-md-2 col-md-offset-1">
+				<a href="/contact">
+					<p>Contact Us</p>
+				</a>
+			</div>
+		</div>
 	</div>
 
 </div>
+
+<script>
+function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+}
+</script>
