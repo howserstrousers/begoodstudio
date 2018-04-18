@@ -25,7 +25,7 @@ $(document).ready(function() {
 });
 
 //DESKTOP JAVASCRIPT   
-if ( $(window).width() > 769) {
+if ( $(window).width() > 1080) {
 
     //Main container and close
         $('#projectlist a').click(function(){

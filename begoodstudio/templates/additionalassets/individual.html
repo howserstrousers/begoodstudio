@@ -16,9 +16,15 @@
   {% block content %}
 <div id="contentcontainer">
 
-    <div class="projecttitle">
-      <h1>{{ item.name }}</h1>
-    </div>
+  <div class="header">
+    {% block header %}
+      {% include "templates/partials/header.html" %}
+    {% endblock %}
+  </div>
+
+  <div class="projecttitle">
+    <h1>{{ item.name }}</h1>
+  </div>
     
     <div class="projectdescription">
           <p>

@@ -15,6 +15,12 @@
 
 <div id="contentcontainer">  
 
+  <div class="header">
+    {% block header %}
+      {% include "templates/partials/header.html" %}
+    {% endblock %}
+  </div>
+
     <div class="projecttitle">
           <h1>
             {{ item.name }}

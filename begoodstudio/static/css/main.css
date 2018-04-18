@@ -142,28 +142,12 @@ ul, li {
 			}
 		}
 
-	.selected{
-		color:white;
-	}
-
-	#cstrigger{
-
-	}
-
-	#abouttrigger{
-
-	}
-
-	#contacttrigger{
-
-	}
-
 	/* mobile burger nav */
 	.topnav a.icon {
 		    display: none
 		  }
 
-	@media screen and (max-width: 768px) {
+	@media screen and (max-width: 1080px) {
 		.topnav {
 		  overflow: hidden;
 		  float: right;
@@ -182,7 +166,6 @@ ul, li {
 		}
 
 		.topnav a:hover {
-		  background-color: #ddd;
 		  color: black;
 		}
 
@@ -194,7 +177,7 @@ ul, li {
 		  display: none;
 		}
 
-		@media screen and (max-width: 768px) {
+		@media screen and (max-width: 1080px) {
 		  .topnav div:not(:first-child) {
 		  	display: none;
 		  }
@@ -205,7 +188,14 @@ ul, li {
 		  }
 		}
 
-		@media screen and (max-width: 768px) {
+		@media screen and (min-width: 1080px) {
+			#maincontainer 
+			#headercontainer{
+				display:none;
+			}
+		}
+
+		@media screen and (max-width: 1080px) {
 		  .topnav.responsive {position: relative;}
 		  .topnav.responsive .icon {
 		    position: absolute;
@@ -233,6 +223,12 @@ ul, li {
 				}	
 			}
 	}
+
+	@media screen and (min-width: 1080px){
+				#contentcontainer .header{
+					display:none;
+				}	
+			}
 
 	/* END mobile burger nav */
 /* END HEADER */
@@ -299,7 +295,7 @@ ul, li {
 		right:-10px;
 	}
 
-	@media (max-width: 768px){
+	@media (max-width: 1080px){
 			#projectlist a:hover{
 					right:0px;
 				}
@@ -491,14 +487,16 @@ ul, li {
 		overflow: hidden;
 		padding-top: 10%;
 	}
+		@media screen and (max-width: 1080px){
+		#contentcontainer{
+		overflow: hidden;
+		padding-top: 0%;
+		}
+	}
 
 		#maincontainer #contentcontainer{
 			margin-left: -7.5%;
 		}
-
-	#contentcontainer a{
-		
-	}
 
 	#aboutcontainer{
 		display: none;
@@ -532,7 +530,7 @@ ul, li {
 	.projecttitle{
 		margin:0 auto;
 		width:20%;
-		margin-top: 5%;
+		margin-top: 3%;
 		padding-left: 8.25%;
 		float:left;
 		font-size: 1.4rem;
@@ -553,7 +551,7 @@ ul, li {
 
 	.projectdescription{
 		float:left;
-		margin-top: 5%;
+		margin-top: 3%;
 		margin-bottom: 6%;
 		width:41.75%;
 		margin-left:21.75%;
