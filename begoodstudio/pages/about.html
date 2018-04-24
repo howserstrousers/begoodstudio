@@ -13,6 +13,13 @@
 {% block title %}{% parent %} - {{ cms.about.name }}{% endblock %}
 {% block content %}
 <div class="aboutcontainer">
+
+  <div class="header">
+    {% block header %}
+      {% include "templates/partials/header.html" %}
+    {% endblock %}
+  </div>
+  
     <div class="aboutdescription">
       <p>
         {{ cms.about.about_us }}

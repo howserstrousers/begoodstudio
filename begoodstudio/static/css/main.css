@@ -85,6 +85,10 @@ a:visited {
 	color:black;
 }
 
+.navcolor{
+	color:white;
+}
+
 ul, li {
 	list-style: none;
 }
@@ -93,6 +97,8 @@ ul, li {
 	font-size: 36px;
 	vertical-align: middle;
 }
+
+
 
 
 
@@ -110,7 +116,7 @@ ul, li {
 
 		font-family: suissebook, sans-serif !important;
 	}
-		@media screen and (max-width: 768px) {
+		@media screen and (max-width: 1080px) {
 			.headercontainer{
 				padding-top: 5%;
 				padding-bottom:8.5%;	
@@ -118,7 +124,7 @@ ul, li {
 				padding-right:5%;
 				position: relative;
 				z-index: 10;
-				font-size: .75rem;
+				font-size: 1.2rem;
 				z-index: 5002;
 
 				font-family: suissebook, sans-serif !important;
@@ -147,16 +153,21 @@ ul, li {
 		    display: none
 		  }
 
+	.mobilenavmargin a{
+		
+	}
+
+
 	@media screen and (max-width: 1080px) {
 		.topnav {
 		  overflow: hidden;
 		  float: right;
-		  width: 20%;
+		  width: 25%;
 		}
 
 		@media screen and (max-width: 425px){
 			.topnav {
-			  width: 30%;
+			  width: 50%;
 			}
 		}
 
@@ -215,17 +226,34 @@ ul, li {
 		}
 
 		.mobilenavmargin div a{
-			padding-bottom: 7%;
+			padding-bottom: 18%;
 		}	
 			@media screen and (max-width: 425px){
 				.mobilenavmargin div a{
-					padding-bottom: 12%;
+					padding-bottom: 18%;
 				}	
 			}
 	}
 
-	@media screen and (min-width: 1080px){
+	@media screen and (min-width: 1024px){
 				#contentcontainer .header{
+					display:none;
+				}	
+			}
+
+	@media screen and (min-width: 1024px){
+				#aboutcontainer .header{
+					display:none;
+				}	
+			}
+
+	@media screen and (min-width: 1024px){
+				#contactcontainer .header{
+					display:none;
+				}	
+			}
+	@media screen and (min-width: 1024px){
+				.cscontainer .header{
 					display:none;
 				}	
 			}
@@ -245,7 +273,6 @@ ul, li {
 		border-top: 1px solid black;
 		font-family: suissebook, sans-serif !important;
 		font-size: .7rem;
-		background-color: white;
 		letter-spacing: .5px;
 		z-index: 501;
 	}
@@ -320,7 +347,7 @@ ul, li {
 		@media (max-width: 768px){
 			.aboutcontainer{
 				position: absolute;
-				padding:5%;
+				padding:0%;
 				top:0vh;
 				background-color:#f05058;
 				height:100vh;
@@ -330,10 +357,23 @@ ul, li {
 	.aboutdescription{
 		margin-bottom: 7%;
 		font-size:1.3rem;
+		padding: 0;
 	}
+		@media (max-width: 768px){
+			.aboutdescription{
+				padding:5%;
+
+			}
+		}
  
 	.aboutdescription p{
 		width:90% !important;
+	}
+
+	@media (max-width: 768px){
+		.aboutservices{
+			padding-left:5%;
+		}
 	}
 
 /*END ABOUT*/
@@ -347,25 +387,33 @@ ul, li {
 		color:white;
 	}
 
-		@media (max-width: 768px){
+		@media (max-width: 1080px){
 			.contactcontainer{
 				position: absolute;
 				margin-left:0;
 				width:100%;
-				padding:5%;
+				padding:0%;
 				top:0vh;
-				background-color:black;
+				color:black;
 				height:100vh;
 			}
 		}
 
 	.contactemail{
-		width: 100%;
+		width: 85%;
 		font-size: 1.3rem;
 		display: inline-block;
 		margin-bottom: 10%;
 		padding-right: 5%;
+		padding: 0;
 	}
+		@media (max-width: 1080px){
+			.contactemail{
+				padding: 2.5%;
+				padding-left: 5%;
+				margin-bottom: 5%;
+			}
+		}
 
 	.contactemail p{
 		word-break:break-all;
@@ -374,8 +422,16 @@ ul, li {
 	.contactaddress{
 		font-size: 1.3rem;
 		display: inline-block;
+		padding:0;
 
 	}
+	@media (max-width: 1080px){
+			.contactaddress{
+				padding: 2.5%;
+				padding-left: 5%;
+			}
+		}
+
 	.contactaddress p{
 		word-break:break-all;
 
@@ -387,6 +443,7 @@ ul, li {
 	.cslist{
 		position: absolute;
 		top:20vh;
+		width:90%;
 		font-size: 1.6rem;
 		color:white;
 	}
@@ -405,12 +462,17 @@ ul, li {
 				position: absolute;
 				margin-left:0;
 				width:100%;
-				padding:5%;
+				padding:0%;
 				top:0vh;
 				background-color:#6ec2dc;
 				height:100vh;
 			}
+
+			.cscontainer p{
+				padding-left:5%;
+			}
 		}
+
 /*END CASE STUDY*/
 
 
@@ -537,12 +599,12 @@ ul, li {
 		position: relative;
 
 	}
-		@media (max-width: 768px){
+		@media (max-width: 1024px){
 			.projecttitle{
 				margin: 0 auto;
 			    width: 90%;
-			    margin-top: 15%;
-			    padding-left: 8.25%;
+			    margin-top: 5%;
+			    padding-left: 5%;
 			    float: left;
 			    font-size: 1.6rem;
 			}
@@ -563,10 +625,10 @@ ul, li {
 		@media (max-width: 768px){
 			.projectdescription{
 				float: left;
-			    margin-top: 5%;
-			    margin-bottom: 8%;
-			    width: 83.5%;
-			    margin-left: 8.25%;
+			    margin-top: 8%;
+			    margin-bottom: 10%;
+			    width: 90%;
+			    margin-left: 5%;
 			    font-size: 1rem;
 			    max-width: 1000px;
 			}

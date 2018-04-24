@@ -63,16 +63,37 @@ if ( $(window).width() > 1080) {
 
 
     /*nav color change
-        $('.headercontainer a').click( function() { 
+        $('#cstrigger a').click( function() { 
               $('#cstrigger, #abouttrigger, #contacttrigger').css("color", "black");
-              $(this).css("color", "white");
+              $('.headercontainer a').css("color", "white");
         });
 
-        $('#abouttrigger').click( function() { 
-              $('#cstrigger, #contacttrigger').css("color", "black");
-              $(this).css("color", "white");
+        $('#abouttrigger a').click( function() { 
+              $('#abouttrigger, #contacttrigger').css("color", "white");
+              $('#cstrigger').css("color", "black");
         });
     */
+
+        $('#cstrigger a').click( function() { 
+              $('#cstrigger span, #abouttrigger span, #contacttrigger span').addClass("navcolor");
+        });
+
+        $('#abouttrigger a').click( function() { 
+              $('#abouttrigger span, #contacttrigger span').addClass("navcolor");
+        });
+
+         $('#contacttrigger a').click( function() { 
+              $('#contacttrigger span').addClass("navcolor");
+        });
+
+        $('#abouttrigger a').click( function() { 
+              $('#cstrigger span').removeClass("navcolor");
+        });
+
+        $('#contacttrigger a').click( function() { 
+              $('#cstrigger span, #abouttrigger span').removeClass("navcolor");
+        });
+        
 
     //project list move to bg
         $('#projectlist a').click(function(){
@@ -170,6 +191,8 @@ if ( $(window).width() > 1080) {
         $("#menu-nav a").fadeTo('fast', 1.0);
             setCurrentPage(e.state ? e.state.url : null);
     };
+
+    
 }
 //END DESKTOP JAVASCRIPT
 
