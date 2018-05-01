@@ -25,13 +25,17 @@ $(document).ready(function() {
 });
 
 //DESKTOP JAVASCRIPT   
-if ( $(window).width() > 1080) {
+if ( $(window).width() > 1024) {
 
     //Main container and close
         $('#projectlist a').click(function(){
             $('#maincontainer, #ec1').css({
-                display: 'block'
+                display: 'block',
             });
+
+                $('#projectlist a').click(function(){
+                    $('body').css('overflow','hidden');
+                });
 
         $("#maincontainer").load($(this).attr('href'));
              return false;
@@ -61,18 +65,28 @@ if ( $(window).width() > 1080) {
             });
         });
 
-
-    /*nav color change
-        $('#cstrigger a').click( function() { 
-              $('#cstrigger, #abouttrigger, #contacttrigger').css("color", "black");
-              $('.headercontainer a').css("color", "white");
+     /*body no scroll*/
+     $('#projectlist a').click( function() { 
+              $('body').addClass("modal-open");
         });
 
-        $('#abouttrigger a').click( function() { 
-              $('#abouttrigger, #contacttrigger').css("color", "white");
-              $('#cstrigger').css("color", "black");
+     $('#cstrigger a').click( function() { 
+              $('body').addClass("modal-open");
         });
-    */
+
+     $('#abouttrigger a').click( function() { 
+              $('body').addClass("modal-open");
+        });
+
+     $('#contacttrigger a').click( function() { 
+              $('body').addClass("modal-open");
+        });
+
+
+    /*nav color change*/
+        $('#projectlist a').click( function() { 
+              $('#cstrigger span, #abouttrigger span, #contacttrigger span').addClass("navcolor");
+        });
 
         $('#cstrigger a').click( function() { 
               $('#cstrigger span, #abouttrigger span, #contacttrigger span').addClass("navcolor");
@@ -169,6 +183,14 @@ if ( $(window).width() > 1080) {
             });
         });
 
+    /*bodynoscroll
+        $("input#showpopup").click(function(){
+            $("div#overlay").fadeIn('500');       
+            $("div#popup").delay('800');
+            $("div#popup").fadeIn('500');         
+            $('body').css('overflow','hidden');
+       });
+    */
 
 //URL load
     var setCurrentPage = function(url) {
@@ -196,12 +218,7 @@ if ( $(window).width() > 1080) {
 }
 //END DESKTOP JAVASCRIPT
 
-//Main container fixed
-    var fixed = document.getElementById('projectlist');
-    $('#projectlist a').click(function(){
-        fixed.addEventListener('touchmove', function(e) {
-                e.preventDefault();
-        }, false);
-    });
+
+
 
 

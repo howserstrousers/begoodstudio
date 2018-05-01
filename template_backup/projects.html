@@ -15,37 +15,37 @@
 {% block content %}
 
 <div class="header">
-{% block header %}
-        {% include "templates/partials/header.html" %}
-{% endblock %}
+  {% block header %}
+    {% include "templates/partials/header.html" %}
+  {% endblock %}
 </div>
-
-{% block footer %}
-        {% include "templates/partials/footer.html" %}
-{% endblock %}
-
 
 
 <div id="ec1" onclick="window.location.href = '/projects/all-projects/';">
 </div>
-<div id="ec2" class="col-xs-7" onclick="window.location.href = '/projects/all-projects/';">
+<div id="ec2" class=" col-xs-4 col-md-7" onclick="window.location.href = '/projects/all-projects/';">
 </div>
-<div id="ec3" class="col-xs-9" onclick="window.location.href = '/projects/all-projects/';">
+<div id="ec3" class="col-xs-6 col-md-9" onclick="window.location.href = '/projects/all-projects/';">
 </div>
 
-  <div id="maincontainer" class="col-xs-8 col-xs-offset-4" style="background-color:{{ item.main_container_bg_color }}; color:{{ item.container_text_color }};" >
+  <div id="maincontainer" class="col-xs-10 col-xs-offset-2 col-md-8 col-md-offset-4" style="background-color:{{ item.main_container_bg_color }}; color:{{ item.container_text_color }};" >
   </div>
 
-  <div id="aboutcontainer" class="col-xs-5 col-xs-offset-7" style="background-color:{{ item.about_container_bg_color }};">
+  <div id="aboutcontainer" class="col-xs-8 col-xs-offset-4 col-md-5 col-md-offset-7" style="background-color:{{ item.about_container_bg_color }};">
   </div>
 
-  <div id="contactcontainer" class="col-xs-2 col-xs-offset-9" style="background-color:{{ item.contact_container_bg_color }};">
+  <div id="contactcontainer" class="col-xs-6 col-xs-offset-6 col-md-2 col-md-offset-9" style="background-color:{{ item.contact_container_bg_color }};">
   </div>
 
 <div class="projectcontainer">
   <div id="projectlist">
     {% for row in item.grid %}
       <a id="project" href="/{{ row.link }}">
+        <!--
+        <object type="image/svg+xml" data="/static/images/void.svg">
+          Your browser does not support SVG
+        </object>
+        -->
         <p>
           {{ row.title }}<span class="unicode">&#x25AA;</span>
         </p>
@@ -53,5 +53,55 @@
     {% endfor %}
   </div>
 </div>
+
+<style>
+#projectlist{
+    text-align: center;
+    z-index: 500;
+
+  }
+
+  #projectlist object{
+    margin: 0 auto;
+    height:30px;
+    float:left;
+    display: inline-block;
+
+  }
+
+  #projectlist a{
+    font-size: 3.5rem;
+    line-height:3.5rem;
+    padding-right:2%;
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    /*color: #f05058;*/
+    color: transparent;  
+      text-shadow: 0 0 0 {{ item.projectlist_color_1 }};
+  }
+    @media (max-width: 768px){
+      #projectlist a{
+        font-size: 2.5rem;
+        line-height:2.75rem;
+      }
+    }
+
+  #projectlist a:hover{
+    right:-10px;
+  }
+
+  @media (max-width: 1080px){
+      #projectlist a:hover{
+          right:0px;
+        }
+    }
+
+  #projectlist a:nth-child(odd) {
+      /*color: #6ec2dc;*/
+      color: transparent;  
+      text-shadow: 0 0 0 {{ item.projectlist_color_2 }};
+  }
+</style>
 
 {% endblock %}
