@@ -426,6 +426,7 @@ ul, li {
 	.cslist{
 		position: absolute;
 		top:20vh;
+		padding-left:9%;
 		width:90%;
 		font-size: 1.6rem;
 		color:white;
@@ -510,8 +511,9 @@ ul, li {
 	#maincontainer{
 		display: none;
 		height:100%;
+		width:71.8%;
 		top:0;
-		padding-left: 5%;
+		right:0;
 		position:fixed;
 		overflow: auto;
 		color:white;
@@ -531,7 +533,7 @@ ul, li {
 	#contentcontainer{
 		overflow: hidden;
 		padding-top: 10%;
-		width: 95%;
+		width: 100%;
 	}
 
 		@media screen and (max-width: 1024px){
@@ -542,7 +544,7 @@ ul, li {
 	}
 
 		#maincontainer #contentcontainer{
-			margin-left: -7.5%;
+			
 		}
 
 	#aboutcontainer{
