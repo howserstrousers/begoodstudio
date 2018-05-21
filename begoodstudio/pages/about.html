@@ -30,20 +30,18 @@
     </div>
 
     <div class="aboutservices">
-      <li>
+      <li class="servicestitle">
         {{ cms.about.services }}
       </li>
-      <li>
-        {# Loop of your Repeatable Form items. Remember, you can sort the order in your CMS if you need. #}
+
         <ul>
         {% for row in cms.about.grid %}
-            <li>
+            <li class="servicelist">
               {{ row.serviceslist }}
             </li>
         {% endfor %}
         </ul>
-      </li>
+
     </div>
-  </ul>
 </div>
 {% endblock %}

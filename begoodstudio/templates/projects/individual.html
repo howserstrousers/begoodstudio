@@ -28,7 +28,7 @@
 <div id="ec3" class="col-xs-6 col-md-9" onclick="window.location.href = '/projects/all-projects/';">
 </div>
 
-  <div id="maincontainer"  style="background-color:{{ item.main_container_bg_color }}; color:{{ item.container_text_color }};" >
+  <div id="maincontainer" class="maincolor" style="background-color:{{ item.main_container_bg_color }}; color:{{ item.container_text_color }};" >
   </div>
 
   <div id="aboutcontainer" class="col-xs-8 col-xs-offset-4 col-md-5 col-md-offset-7" style="background-color:{{ item.about_container_bg_color }};">
@@ -41,11 +41,11 @@
   <div id="projectlist">
     {% for row in item.grid %}
       <a id="project" href="/{{ row.link }}">
-        
+        <img src="/static/images/void.png"/>
         <p>
-          <object type="image/svg+xml" data="/static/images/void.svg">
+          <!--<object type="image/svg+xml" data="/static/images/void.svg">
           Your browser does not support SVG
-          </object>
+          </object>-->
           {{ row.title }}<span class="unicode">&#x25AA;</span>
         </p>
       </a>
@@ -54,6 +54,7 @@
 </div>
 
 <style>
+
 #projectlist{
     text-align: center;
     z-index: 500;
@@ -69,7 +70,7 @@
   }
 
   #projectlist a{
-    font-size: 3.5rem;
+    font-size: 3rem;
     line-height:3.5rem;
     padding-right:2%;
     position: relative;
@@ -105,6 +106,18 @@
   #project object{
     color:blue;
   }
+
+  #project img{
+    height:3.2rem;
+    float:left;
+  }
+    @media (max-width: 768px){
+      #project img{
+        height: 2.7rem;
+      }
+    }
+
+
 </style>
 
 {% endblock %}

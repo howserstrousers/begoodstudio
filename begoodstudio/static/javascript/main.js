@@ -21,7 +21,22 @@ $(document).ready(function() {
         $(window).resize(function() {
             setHeight();
         });
+
+        function setHeight() {
+          windowHeight = $(window).innerHeight();
+          $('#aboutcontainer').css('min-height', windowHeight);
+        };
+        setHeight();
+        
+        $(window).resize(function() {
+            setHeight();
+        });
     // END Carousel
+
+    // mobile nav no scroll
+    $('.icon').click( function() { 
+              $('body').toggleClass("modal-open");
+        });
 });
 
 //DESKTOP JAVASCRIPT   

@@ -8,7 +8,6 @@
 -->
 
 <div class="headercontainer clearfix">
-
 	<div class="headerlogo col-xs-3">
 		<a href="/projects/all-projects">
 			<img src="/static/images/begoodlogo.png">
@@ -17,7 +16,7 @@
 
 	<div class="topnav" id="myTopnav">
 		<div>
-			<a href="javascript:void(0);" style="font-size:18px;" class="icon" onclick="myFunction()">
+			<a href="javascript:void(0);" style="font-size: 18px; position: fixed; right: 3%; top: 2%;" class="icon" onclick="myFunction()">
 				&#9776;
 			</a>
 		</div>
@@ -29,21 +28,38 @@
 				</a>
 			</div>
 
-			<div id="abouttrigger" class="col-md-2 col-md-offset-1">
+			<div id="abouttrigger" class="mobilenavcenter col-md-2 col-md-offset-1">
 				<a href="/about">
 					<span>About</span>
 				</a>
 			</div>
 
-			<div id="contacttrigger" class="col-md-2 col-md-offset-1">
+			<div id="contacttrigger" class="mobilenavcenter col-md-2 col-md-offset-1">
 				<a href="/contact">
 					<span>Contact Us</span>
 				</a>
 			</div>
 		</div>
 	</div>
-
 </div>
+
+<style>
+	.mobilenavmargin{
+		padding-top:60%;
+	}
+
+	@media screen and (min-width: 425px){
+		.mobilenavmargin{
+			padding-top:45%;
+		}
+	}
+
+	@media screen and (min-width: 1024px){
+		.mobilenavmargin{
+			padding-top:0%;
+		}
+	}
+</style>
 
 <script>
 function myFunction() {
