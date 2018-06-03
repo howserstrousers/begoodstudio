@@ -21,12 +21,6 @@
     {% endblock %}
   </div>
 
-  {% for row in item.video %}
-        <div class="video-responsive col-xs-12">
-          <iframe src="https://player.vimeo.com/video/{{ row.video_url }}?byline=0&portrait=0" width="1200" height="675" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-        </div>
-  {% endfor %}
-
     <div class="projecttitle">
           <h1>
             {{ item.name }}
@@ -38,5 +32,11 @@
             {{ item.description }}
           </p>
         </div>
+
+    {% for row in item.video %}
+        <div class="video-responsive col-xs-12">
+          <iframe src="https://player.vimeo.com/video/{{ row.video_url }}?byline=0&portrait=0" width="1200" height="675" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        </div>
+    {% endfor %}
 </div>
 {% endblock %}

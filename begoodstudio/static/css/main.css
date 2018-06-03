@@ -101,17 +101,14 @@ ul, li {
 	vertical-align: middle;
 }
 
-
-
-
-
-/* HEADER */
+/* HEADER COPY*/
 
 	.headercontainer{
-		padding-top: 1%;	
+		width:95%;
+		padding-top: 1%;
 		padding-left:2.5%;
 		padding-right:2.5%;
-		position: relative;
+		position: fixed;
 		z-index: 10;
 		font-size: .72rem;
 		letter-spacing: 1px;
@@ -121,9 +118,10 @@ ul, li {
 	}
 		@media screen and (max-width: 1024px) {
 			.headercontainer{
+				width:100%;
 				padding-top: 4%;	
-				padding-left:5%;
-				padding-right:5%;
+				padding-left:0%;
+				padding-right:0%;
 				position: relative;
 				z-index: 10;
 				font-size: 1.2rem;
@@ -133,23 +131,18 @@ ul, li {
 			}
 		}
 
-	#cstrigger{
-		padding-top: .72%;
-	}
-
-	#abouttrigger{
-		padding-top: .72%;
-	}
-
-	#contacttrigger{
-		padding-top: .72%;
-	}
-
 	.headerlogo {
 		display: inline-block;
 		float:left;
-		width:90px;
+		width:25%;
+		padding-left: 0;
 	}
+		@media screen and (max-width: 1024px) {
+			.headerlogo {
+				padding-left: 5%;
+				padding-bottom: 3%;
+			}
+		}
 	
 		.headerlogo img{
 			width:90px;
@@ -158,6 +151,51 @@ ul, li {
 		@media (max-width: 768px){
 			.headerlogo img{
 				width:70px;
+			}
+		}
+
+	#cstrigger{
+		float:left;
+		padding:0 auto;
+		margin:0 auto;
+		padding-top: .72%;
+		padding-left: 5%;
+		width:20%;
+	}
+		@media (max-width: 768px){
+			#cstrigger{
+				width:100%;
+				padding-left: 0%;
+			}
+		}
+
+	#abouttrigger{
+		float:left;
+		padding:0 auto;
+		margin:0 auto;
+		padding-top: .72%;
+		padding-left: 5%;
+		width:20%;
+	}
+		@media (max-width: 768px){
+			#abouttrigger{
+				width:100%;
+				padding-left: 0%;
+			}
+		}
+
+	#contacttrigger{
+		float:left;
+		padding:0 auto;
+		margin:0 auto;
+		padding-top: .72%;
+		padding-left: 5%;
+		width:20%;
+	}
+		@media (max-width: 768px){
+			#contacttrigger{
+				width:100%;
+				padding-left: 0%;
 			}
 		}
 
@@ -222,9 +260,7 @@ ul, li {
 		@media screen and (max-width: 1024px) {
 		  .topnav.responsive {position: relative;}
 		  .topnav.responsive .icon {
-		    position: fixed;
-		    right: 0;
-		    top: 0;
+		   
 		  }
 		  .topnav.responsive div {
 		    float: none;
@@ -246,9 +282,23 @@ ul, li {
 					padding-bottom: 18%;
 				}	
 			}
+
+		.icon{
+			font-size: 18px; 
+			position: fixed; 
+			right: 3%; 
+			top: 3%;
+		}
+			@media screen and (max-width: 425px){
+				.icon{
+					top: 1.75%;
+				}
+			}
 	}
 
 	@media screen and (min-width: 1024px){
+
+
 				#contentcontainer .header{
 					display:none;
 				}
@@ -297,6 +347,11 @@ ul, li {
 	#maincontainer #footer{
 		display:none;
 	}
+		@media screen and (max-width: 1024px){
+			#footer{
+				margin-top: 5vh;
+			}
+		}
 
 	#aboutcontainer #footer{
 		display:none;
@@ -305,6 +360,7 @@ ul, li {
 	#contactcontainer #footer{
 		display:none;
 	}
+
 
 
 /* END FOOTER */
@@ -323,13 +379,19 @@ ul, li {
 		word-break:break-all;
 		float:left;
 	}
+		@media (max-width: 768px){
+			#project p{
+				word-break:normal;
+				float:left;
+			}
+		}
 
 /*END Projects List*/
 
 /*ABOUT*/
 	.aboutcontainer{
 		position: absolute;
-		top:22vh;
+		top:17vh;
 		color:white;
 		background-color:#f05058
 	}
@@ -341,30 +403,21 @@ ul, li {
 				background-color:#f05058;
 				height:100vh;
 			}
-		}
-
-		@media (min-height: 1024px){
-			.aboutcontainer{
-				top:20vh;
-			}
 		}		
-
-		@media (min-height: 1200px){
-			.aboutcontainer{
-				top:18vh;
-			}
-		}
 
 	.aboutdescription{
 		margin-bottom: 7%;
 		font-size:.9rem;
 		line-height:1.4rem;
 		padding: 0;
+		padding-left: 9%;
+		margin-top: 0;
 	}
 		@media (max-width: 768px){
 			.aboutdescription{
 				padding:5%;
-
+				margin-bottom: 3%;
+				margin-top: 30%;
 			}
 		}
  
@@ -375,6 +428,7 @@ ul, li {
 	.aboutservices{
 		font-size: 1.2rem;
 		line-height: 1.9rem;
+		padding-left: 9%;#
 	}
 
 	@media (max-width: 768px){
@@ -396,8 +450,8 @@ ul, li {
 /*CONTACT*/
 	.contactcontainer{
 		position: absolute;
-		top:22vh;
-		margin-left:-7.5%;
+		top:17vh;
+		padding-left: 15%;
 		padding-right: 2.5%;
 		color:white;
 	}
@@ -412,19 +466,7 @@ ul, li {
 				color:black;
 				height:100vh;
 			}
-		}
-
-		@media (min-height: 1024px){
-			.contactcontainer{
-				top:20vh;
-			}
 		}		
-
-		@media (min-height: 1200px){
-			.contactcontainer{
-				top:18vh;
-			}
-		}
 
 	.contactemail{
 		width: 85%;
@@ -434,12 +476,14 @@ ul, li {
 		margin-bottom: 10%;
 		padding-right: 5%;
 		padding: 0;
+		margin-top:0;
 	}
 		@media (max-width: 1024px){
 			.contactemail{
 				padding: 2.5%;
 				padding-left: 5%;
-				margin-bottom: 5%;
+				margin-bottom: 4%;
+				margin-top:35%;
 			}
 		}
 
@@ -472,7 +516,7 @@ ul, li {
 	.cslist{
 		position: absolute;
 		top:22vh;
-		padding-left:9%;
+		padding-left:7.75%;
 		width:90%;
 		font-size: 1.6rem;
 		color:white;
@@ -522,7 +566,7 @@ ul, li {
 	#ec1{
 		display: none;
 		height:100%;
-		width:28.25%;
+		width:25%;
 		position:fixed;
 		top:0;
 		left:0;
@@ -544,6 +588,7 @@ ul, li {
 	#ec2{
 		display: none;
 		height:100%;
+		width:50%;
 		position:absolute;
 		top:0;
 		left:0;
@@ -556,6 +601,7 @@ ul, li {
 	#ec3{
 		display: none;
 		height:100%;
+		width:75%;
 		position:absolute;
 		top:0;
 		left:0;
@@ -568,7 +614,7 @@ ul, li {
 	#maincontainer{
 		display: none;
 		height:100%;
-		width:71.8%;
+		width:75%;
 		top:0;
 		right:0;
 		position:fixed;
@@ -595,8 +641,10 @@ ul, li {
 
 		@media screen and (max-width: 1024px){
 		#contentcontainer{
-		overflow: hidden;
-		padding-top: 0%;
+			background-color: #6ec2dc;
+			color:white;
+			overflow: hidden;
+			padding-top: 0%;
 		}
 	}
 
@@ -608,14 +656,14 @@ ul, li {
 
 	#videocontainer{
 		overflow: hidden;
-		padding-top: 0%;
+		padding-top: 10%;
 		width: 100%;
 	}
 
 	#aboutcontainer{
 		display: none;
 		height:100%;
-		padding-left: 6.5%;
+		width:50%;
 		position:absolute;
 		top:0;
 		right:0;
@@ -628,7 +676,7 @@ ul, li {
 	#contactcontainer{
 		display: none;
 		height:100%;
-		padding-left: 7.5%;
+		width: 25%;
 		position:absolute;
 		top:0;
 		right:0;
@@ -645,10 +693,11 @@ ul, li {
 		margin:0 auto;
 		width:20%;
 		margin-top: 3%;
-		padding-left: 8.25%;
+		padding-left: 7.75%;
 		float:left;
 		font-size: 1.4rem;
 		position: relative;
+		letter-spacing: 1.5px;
 
 	}
 		@media (max-width: 1024px){
@@ -671,6 +720,7 @@ ul, li {
 		margin-left:21.75%;
 		font-size: .9rem;
 		max-width: 1000px;
+		line-height: 1.5rem
 		
 	}
 
@@ -692,8 +742,9 @@ ul, li {
 		width:100%;
 		margin: 0 auto;
 		margin-top: 2.75%;
-		padding-left: 8.25%;
+		padding-left: 7.75%;
 		padding-bottom: 2.5%;
+		letter-spacing: 1px;
 	}
 
 	.overviewtext{
@@ -713,16 +764,15 @@ ul, li {
 		margin:0 auto;
 		float:left;
 		overflow: hidden;
-		margin-bottom: -.5%;
+		margin-bottom: -1%;
 	}
 
 	.prev_next{
 		width:100%;
-		height: 100%;
+		height: 97%;
 		z-index: 1;
+		padding-top: 3%;
 		position: absolute;
-		display: flex;
-    	align-items: center;
 	}
 
 		.prev_next a:nth-child(1){
@@ -730,17 +780,29 @@ ul, li {
 			text-align: left;
 			padding-left: 3%;
 			width:40%;
-			font-size: 5.5rem;
-			
+			font-size: 3rem;
+			color:#DCDCDC;
 		}
+			@media (max-width: 768px){
+				.prev_next a:nth-child(1){
+					font-size: 2.5rem;
+				}
+			}
+
 
 		.prev_next a:nth-child(2){
 			float: right;
 			text-align: right;
 			padding-right:3%;
-			width:60%;
-			font-size: 5.5rem;
+			width:40%;
+			font-size: 3rem;
+			color:#DCDCDC;
 		}
+			@media (max-width: 768px){
+				.prev_next a:nth-child(2){
+					font-size: 2.5rem;
+				}
+			}
 
 	.carousel_image{
 		margin: 0 auto;
@@ -757,6 +819,7 @@ ul, li {
 	.video-responsive{
     overflow:hidden;
     padding-bottom:56.25%;
+    margin-bottom: -.25%;
     position:relative;
     height:0;
 	}
@@ -772,6 +835,7 @@ ul, li {
 	.videogrid-responsive{
     overflow:hidden;
     padding-bottom:28.125%;
+    margin-bottom: -.25%;
     position:relative;
     height:0;
 	}
@@ -789,7 +853,6 @@ ul, li {
     padding-bottom:89.25%;
     margin-bottom: -.5%;
     position:relative;
-    height:0;
 	}
 	
 	.video-responsive-vertical iframe{
@@ -834,7 +897,7 @@ ul, li {
 	.postersingle{
 		margin: 0 auto;
 		text-align: center;
-		margin-bottom: -.5%;
+		margin-bottom: -1%;
 	}
 
 	.postersingle img{

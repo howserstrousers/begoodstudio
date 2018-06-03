@@ -8,6 +8,8 @@ $(document).ready(function() {
                 appendArrows: "#" + carouselId + " .prev_next",
                 prevArrow: '<a>&#8249</a>',
                 nextArrow: '<a>&#8250</a>',
+                //prevArrow: "<img src='/static/images/leftarrow.png'>",
+                //nextArrow: "<img src='/static/images/rightarrow.png'>",
                 lazyLoad: 'progressive',
             });
         });

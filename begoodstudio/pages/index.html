@@ -18,6 +18,85 @@
 {% block title %}{% parent %} - Homepage{% endblock %}
 
 {% block content %}
+<div id="indexcontainer">
+  <div class="holding">
+    <div class="holdinglogo">
+      <img src="/static/images/begoodlogo.png">
+    </div>
+  </div>
+
+    <div class="holdinginfo">
+      <p class="comingsoon">COMING SOON</p>
+
+      <p>1427 EAST 4TH STREET LOS ANGELES CA 90033</p>
+
+      <div class="holdingcontact">
+        <p>info@begoodstudios.com</p>
+      </div>
+    </div>
+</div>
+
+  <style>
+    #indexcontainer{
+      height:100vh;
+    }
+
+    .holding{
+
+    }
+
+    .holdinglogo{
+      width:70%;
+      padding-left: 15%;
+      position: absolute;
+      top: 45%;
+      transform: translateY(-50%);
+    }
+
+      @media (min-width: 1024px){
+        .holdinglogo{
+          width:30%;
+          padding-left: 35%;
+        }
+      }
+
+    .holdinglogo img{
+      width:100%;
+    }
+
+    .holdinginfo{
+      position: absolute;
+      top:85vh;
+      width: 100%;
+      margin: 0 auto;
+      text-align: center;
+      line-height: 1.8rem;
+      letter-spacing: 1px;
+    }
+      @media (max-width: 1024px){
+        .holdinginfo{
+          top:80vh;
+        }
+      }
+
+      .comingsoon{
+        margin-bottom: 5%;
+        color:#f05058;
+      }
+        @media (min-width: 1024px){
+          .comingsoon{
+            margin-bottom: 2%;
+            color:#f05058;
+          }
+        }
+
+      .holdingcontact{
+        color:#6ec2dc;
+      }
+
+  </style>
+
+<!--
 
   <h1>Hello world!</h1>
 
@@ -37,5 +116,5 @@
     </ul>
 
   {% endif %}
-
+-->
 {% endblock %}
