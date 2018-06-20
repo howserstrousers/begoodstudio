@@ -20,39 +20,21 @@
   {% endblock %}
 </div>
 
-<!-- CONTAINERS Original
-    <div id="ec1" onclick="window.location.href = '/projects/all-projects/';">
-    </div>
-    <div id="ec2" class=" col-xs-4 col-md-7" onclick="window.location.href = '/projects/all-projects/';">
-    </div>
-    <div id="ec3" class="col-xs-6 col-md-9" onclick="window.location.href = '/projects/all-projects/';">
-    </div>
-
-      <div id="maincontainer" class="maincolor" style="background-color:{{ item.main_container_bg_color }}; color:{{ item.container_text_color }};" >
-      </div>
-
-      <div id="aboutcontainer" class="col-xs-8 col-xs-offset-4 col-md-5 col-md-offset-7" style="background-color:{{ item.about_container_bg_color }};">
-      </div>
-
-      <div id="contactcontainer" class="col-xs-6 col-xs-offset-6 col-md-2 col-md-offset-9" style="background-color:{{ item.contact_container_bg_color }};">
-      </div>
- -->
-
  <!-- CONTAINERS NEW -->
     <div id="ec1" onclick="window.location.href = '/projects/all-projects/';">
     </div>
     <div id="ec2" onclick="window.location.href = '/projects/all-projects/';">
     </div>
-    <div id="ec3" class="col-xs-6 col-md-9" onclick="window.location.href = '/projects/all-projects/';">
+    <div id="ec3" onclick="window.location.href = '/projects/all-projects/';">
     </div>
 
-      <div id="maincontainer"style="background-color:{{ item.main_container_bg_color }}; color:{{ item.container_text_color }};" >
+      <div id="maincontainer" >
       </div>
 
-      <div id="aboutcontainer" style="background-color:{{ item.about_container_bg_color }};">
+      <div id="aboutcontainer" >
       </div>
 
-      <div id="contactcontainer"style="background-color:{{ item.contact_container_bg_color }};">
+      <div id="contactcontainer">
       </div>
 
 
@@ -64,7 +46,7 @@
             <!--<img src="/static/images/void.png"/>-->
 
             <p>
-              {{ row.title }}<span class="unicode">&#x25AA;</span>
+              {{ row.title }} <!--<span class="unicode">&#x25AA;</span>-->
             </p>
           </a>
         {% endfor %}
@@ -83,16 +65,15 @@
     margin: 0 auto;
     height:30px;
     float:left;
-    display: inline-block;
+    
 
   }
 
   #projectlist a{
-    font-size: 3rem;
+    font-size: 2.2rem;
     line-height:3.5rem;
     padding-right:2%;
     position: relative;
-    display: inline-block;
     text-decoration: none;
     /*color: #f05058;*/
     color: transparent;  
@@ -121,8 +102,9 @@
       text-shadow: 0 0 0 {{ item.projectlist_color_2 }};
   }
 
-  #project object{
-    color:blue;
+  #project p{
+    display: inline;
+    word-break:break-word;
   }
 
   #project img{

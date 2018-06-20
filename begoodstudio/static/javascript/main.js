@@ -33,6 +33,16 @@ $(document).ready(function() {
         $(window).resize(function() {
             setHeight();
         });
+
+        function setHeight() {
+          windowHeight = $(window).innerHeight();
+          $('#videocontainer').css('min-height', windowHeight);
+        };
+        setHeight();
+        
+        $(window).resize(function() {
+            setHeight();
+        });
     // END Carousel
 
     // mobile nav no scroll

@@ -39,38 +39,6 @@
 					<span>Contact Us</span>
 				</a>
 			</div>
-
-<!--NAV COPY
-	<div class="headerlogo col-xs-3">
-		<a href="/projects/all-projects">
-			<img src="/static/images/begoodlogo.png">
-		</a>
-	</div>
-
-	<div class="topnav" id="myTopnav">
-		<div>
-			<a href="javascript:void(0);" style="font-size: 18px; position: fixed; right: 3%; top: 2%;" class="icon" onclick="myFunction()">
-				&#9776;
-			</a>
-		</div>
-			<div id="cstrigger" class="col-md-2 col-md-offset-1">
-				<a href="/casestudies">
-					<span>Case Studies</span>
-				</a>
-			</div>
-
-			<div id="abouttrigger" class="mobilenavcenter col-md-2 col-md-offset-1">
-				<a href="/about">
-					<span>About</span>
-				</a>
-			</div>
-
-			<div id="contacttrigger" class="mobilenavcenter col-md-2 col-md-offset-1">
-				<a href="/contact">
-					<span>Contact Us</span>
-				</a>
-			</div>
-			-->
 		</div>
 	</div>
 </div>
@@ -103,3 +71,48 @@ function myFunction() {
     }
 }
 </script>
+
+{% block content %}
+<style>
+/*main container color */
+      #maincontainer{
+        background-color:{{ cms.colors.maincontainer }};
+      }
+/*content container color */
+      #contentcontainer{
+        background-color:{{ cms.colors.maincontainer}};
+      }
+/*about container color */
+      #aboutcontainer{
+        background-color:{{ cms.colors.aboutcontainer }};
+      }
+/*contact container color */
+      #contactcontainer{
+        background-color:{{ cms.colors.contactcontainer }};
+      }
+/*video container color */
+      #videocontainer{
+        background-color: {{ cms.colors.videocontainer }};
+      }
+/*text color */
+      #maincontainer{
+        color:{{ cms.colors.text }};
+      }
+
+      #contentcontainer{
+        color:{{ cms.colors.text }};
+      }
+
+      #aboutcontainer{
+        color:{{ cms.colors.text }};
+      }
+
+      #contactcontainer{
+        color:{{ cms.colors.text }};
+      }
+
+      #videocontainer{
+        color:{{ cms.colors.text }};
+      }
+</style>
+{% endblock %}
