@@ -21,7 +21,9 @@
 	</div>
 
       <div class="contactemail">
-        {{ cms.contact.email|safe }}
+        <a href="mailto:info@begoodstudios.com">
+          {{ cms.contact.email|safe }}
+        </>
       </div>
 
       <div class="contactaddress">
@@ -38,5 +40,13 @@
   .contactcontainer{
     color: {{cms.colors.text}};
       } 
+
+  .contactcontainer a {
+    color: {{cms.colors.text}};
+      } 
+
+  .contactcontainer .mobilenavmargin a{
+    color: black;
+      }     
 </style>
 {% endblock %}

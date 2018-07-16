@@ -1,15 +1,6 @@
-<!-- Search
-
-{# Simple search form, remove from search index #}
-<form action="/search-results/" method="get" data-search-index="false">
- <input type="text" name="q" placeholder="Search" id="tipue_search_input" />
-</form>
-
--->
-
 <div class="headercontainer clearfix">
 	<div class="headerlogo">
-		<a href="/projects/all-projects">
+		<a href="/">
 			<img src="/static/images/begoodlogo.png">
 		</a>
 	</div>
@@ -22,6 +13,13 @@
 		</div>
 
 		<div class="mobilenavmargin">
+
+			<div id="homebutton">
+				<a href="/">
+					<span>Home</span>
+				</a>
+			</div>
+
 			<div id="cstrigger">
 				<a href="/casestudies">
 					<span>Case Studies</span>
@@ -50,7 +48,7 @@
 
 	@media screen and (min-width: 425px){
 		.mobilenavmargin{
-			padding-top:45%;
+			padding-top:40%;
 		}
 	}
 
@@ -59,6 +57,16 @@
 			padding-top:0%;
 		}
 	}
+
+	#homebutton{
+	}
+
+		@media (min-width: 1024px){
+			#homebutton{
+				display:none;
+			}
+		}
+
 </style>
 
 <script>

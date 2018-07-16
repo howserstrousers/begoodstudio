@@ -57,13 +57,19 @@
     font-weight: normal;
 }
 
+@font-face {
+    font-family: suisseregular;
+    src: url(SuisseIntl-Regular.woff);
+    font-weight: normal;
+}
+
 html{
 	font-size: 12px;
 }
 
 
 body {
-	font-family: suissethin, sans-serif !important;
+	font-family: suisseregular, sans-serif !important;
 }
 
 body.modal-open{
@@ -80,7 +86,7 @@ a:hover {
 	color:black;
 	cursor: pointer;
 }
-	@media (max-width: 768px){
+	@media (max-width: 1024px){
 		a:hover{
 			text-decoration: none;
 		}
@@ -140,7 +146,7 @@ ul, li {
 		@media screen and (max-width: 1024px) {
 			.headerlogo {
 				padding-left: 5%;
-				padding-bottom: 3%;
+				padding-bottom: 0%;
 			}
 		}
 	
@@ -154,6 +160,8 @@ ul, li {
 			}
 		}
 
+
+
 	#cstrigger{
 		float:left;
 		padding:0 auto;
@@ -162,10 +170,16 @@ ul, li {
 		padding-left: 3%;
 		width:22%;
 	}
-		@media (max-width: 768px){
+		@media (max-width: 1024px){
 			#cstrigger{
 				width:100%;
 				padding-left: 0%;
+			}
+		}
+
+		@media (min-width: 1880px){
+			#cstrigger{
+				padding-top: .5%;
 			}
 		}
 
@@ -177,10 +191,16 @@ ul, li {
 		padding-left: 3%;
 		width:22%;
 	}
-		@media (max-width: 768px){
+		@media (max-width: 1024px){
 			#abouttrigger{
 				width:100%;
 				padding-left: 0%;
+			}
+		}
+
+		@media (min-width: 1880px){
+			#abouttrigger{
+				padding-top: .5%;
 			}
 		}
 
@@ -192,10 +212,16 @@ ul, li {
 		padding-left: 3%;
 		width:22%;
 	}
-		@media (max-width: 768px){
+		@media (max-width: 1024px){
 			#contacttrigger{
 				width:100%;
 				padding-left: 0%;
+			}
+		}
+
+		@media (min-width: 1880px){
+			#contacttrigger{
+				padding-top: .5%;
 			}
 		}
 
@@ -294,7 +320,7 @@ ul, li {
 		}
 			@media screen and (max-width: 425px){
 				.icon{
-					top: 1.75%;
+					top: 1.5%;
 				}
 			}
 	}
@@ -340,7 +366,6 @@ ul, li {
 		margin-left: 2.5%;
 		margin-top: 2%;
 		padding-top: 1%;
-		border-top: 1px solid black;
 		font-family: suissebook, sans-serif !important;
 		font-size: .6rem;
 		letter-spacing: .5px;
@@ -365,52 +390,94 @@ ul, li {
 
 	}
 
-
-
 /* END FOOTER */
 
 
 
 /*Projects List*/
 	.projectcontainer{
-		min-height: calc(95vh - 40px);
+		min-height: calc(90vh - 40px);
 		padding-left: 2.5%;
 		padding-right: 2.5%;
 		padding-top:12rem;
+		padding-bottom:2rem;
 	}
-		@media (max-width: 768px){
+		@media (max-width: 1024px){
 			.projectcontainer{
 				padding-top:6rem;
+				padding-bottom:6rem;
 			}
 		}
-
-	#project{
-
-	}	
-
-	#project p{
-
-	}
-		@media (max-width: 768px){
-			#project p{
-				
-			}
-		}
+		
 
 /*END Projects List*/
 
 /*ABOUT*/
 	.aboutcontainer{
 		position: absolute;
-		top: 13.6rem;
+		top: 13.5rem;
 	}
-		@media (max-width: 768px){
+		@media (max-width: 1024px){
 			.aboutcontainer{
 				padding:0%;
 				top:0vh;
+				width: 100%;
 				height:100vh;
 			}
-		}		
+		}
+
+	.abouttext{
+		padding-left: 5%;
+		width:95%;
+	}
+
+		@media (min-width: 1024px){
+			.abouttext{
+				padding-left:11%;
+			}
+		}
+
+		@media (min-width: 1650px){
+			.abouttext{
+				padding-left:13%;
+			}
+		}
+
+		@media (min-width: 1800px){
+			.abouttext{
+				padding-left:15.25%;
+			}
+		}
+
+		@media (min-width: 2150px){
+			.abouttext{
+				padding-left:17%;
+			}
+		}
+
+		@media (min-width: 2350px){
+			.abouttext{
+				padding-left:18.5%;
+			}
+		}
+
+		@media (min-width: 2500px){
+			.abouttext{
+				padding-left:20%;
+			}
+		}
+
+		@media (min-width: 2850px){
+			.abouttext{
+				padding-left:22.5%;
+			}
+		}
+
+		@media (min-width: 3100px){
+			.abouttext{
+				padding-left:23.5%;
+			}
+		}	
 
 	.aboutdescription{
 		margin-bottom: 7%;
@@ -418,31 +485,11 @@ ul, li {
 		line-height:1.6rem;
 		padding: 0;
 		margin-top: 0;
-		padding-left:6%;
 	}
 
 		@media (max-width: 1024px){
 			.aboutdescription{
-				padding-left:5%;
 				margin-top: 35%;
-			}
-		}
-
-		@media (min-width: 1750px){
-			.aboutdescription{
-				padding-left:7.25%;
-			}
-		}
-
-		@media (min-width: 2250px){
-			.aboutdescription{
-				padding-left:8.5%;
-			}
-		}
-
-		@media (min-width: 2750px){
-			.aboutdescription{
-				padding-left:9.25%;
 			}
 		}
  
@@ -454,30 +501,25 @@ ul, li {
 	.aboutservices{
 		font-size: 1.2rem;
 		line-height: 1.9rem;
-		padding-left: 6%;
 	}
 
-	@media (max-width: 1024px){
-		.aboutservices{
-			padding-left:5%;
+		@media (max-width: 1024px){
+			.aboutservices{
+			}
 		}
-	}
 
 		@media (min-width: 1750px){
 			.aboutservices{
-				padding-left:7.25%;
 			}
 		}
 
 		@media (min-width: 2250px){
 			.aboutservices{
-				padding-left:8.5%;
 			}
 		}
 
 		@media (min-width: 2750px){
 			.aboutservices{
-				padding-left:9.25%;
 			}
 		}
 
@@ -494,7 +536,7 @@ ul, li {
 /*CONTACT*/
 	.contactcontainer{
 		position: absolute;
-		top: 13.6rem;
+		top: 13.5rem;
 		padding-left: 13%;
 		padding-right: 2.5%;
 	}
@@ -647,7 +689,7 @@ ul, li {
 		overflow: auto;
 
 	}
-
+	
 	#maincontainer{
 		display: none;
 		height:100%;
@@ -655,46 +697,52 @@ ul, li {
 		top:0;
 		right:0;
 		position:fixed;
-		overflow: auto;
+		overflow: scroll;
 		z-index: 1001;
 	}
 
-		@media (max-width: 768px){
+		@media (max-width: 1024px){
 			#maincontainer{
 				position:fixed;
 				height:100vh;
+				width:100%;
 			}
 		}
 
 
+
 	#contentcontainer{
 		overflow: hidden;
-		padding-top: 10%;
+		padding-top: 13.5rem;
 		width: 100%;
+		min-height: auto;
 	}
 
 		@media screen and (max-width: 1024px){
 		#contentcontainer{
-			overflow: hidden;
-			padding-top: 0%;
+				overflow: hidden;
+				padding-top: 0%;
+				min-height: 100vh;
+			}
 		}
-	}
 
 	#cscontainer{
 		overflow: hidden;
-		padding-top: 0%;
+		padding-top: 45%;
 		width: 100%;
 	}
 
 	#videocontainer{
 		overflow: hidden;
 		width: 100%;
-		padding-top: 0%;
+		padding-top: 13.5rem;
+		min-height: auto;
 
 	}
-		@media screen and (min-width: 1024px){
+		@media screen and (max-width: 1024px){
 		#videocontainer{
-			padding-top:10%;
+			padding-top:0;
+			min-height: 100vh;
 		}
 	}
 
@@ -723,27 +771,44 @@ ul, li {
 
 /*Project Text*/
 
+	.projecttext{
+		position: static;
+		top: 13.5rem;
+		width:100%;
+	}
+
+		@media (max-width: 1024px){
+			.projecttext{
+				position:relative;
+				top: .5rem;
+				width:100%;
+			}
+		}
+
 	.projecttitle{
 		margin:0 auto;
 		width:20%;
-		margin-top: 3%;
 		padding-left: 4%;
 		float:left;
-		font-size: 1.4rem;
+		font-size: 1.5rem;
 		position: relative;
 		letter-spacing: 1px;
 		height:auto;
 		min-height: 50px;
-
+		margin-bottom: 0;
+		margin-top: 0;
 	}
+
 		@media (max-width: 1024px){
 			.projecttitle{
 				margin: 0 auto;
 			    width: 90%;
-			    margin-top: 5%;
 			    padding-left: 5%;
 			    float: left;
 			    font-size: 1.6rem;
+			    margin-top: 6%;
+			    margin-bottom: 7%;
+			    min-height: 0px;
 			}
 		}
 
@@ -765,34 +830,31 @@ ul, li {
 
 	.projectdescription{
 		float:left;
-		margin-top: 3%;
 		width:41.75%;
 		margin-left:13.25%;
-		font-size: .9rem;
+		font-size: 1.05rem;
 		max-width: 1000px;
 		line-height: 1.5rem;
 		height:auto;
 		min-height: 50px;
-		padding-bottom:6%;
+		padding-bottom:7%;
 		
 	}
 
 		@media (max-width: 1024px){
 			.projectdescription{
 				float: left;
-			    margin-top: 8%;
-			    margin-bottom: 5%;
 			    width: 90%;
 			    margin-left: 5%;
 			    font-size: 1rem;
 			    max-width: 1000px;
+			    padding-bottom:10%;
 			}
 		}
 
 		@media (min-width: 2280px){
 			.projectdescription{
 			    margin-left:12.75%;
-			    margin-top:1%;
 			}
 		}
 
@@ -841,7 +903,8 @@ ul, li {
 			padding-left: 3%;
 			width:40%;
 			height:20%;
-			font-size: 3rem;
+			font-family: suissethin;
+			font-size: 2.8rem;
 			color:#DCDCDC;
 		}
 			@media (max-width: 768px){
@@ -857,7 +920,8 @@ ul, li {
 			padding-right:3%;
 			width:40%;
 			height:20%;
-			font-size: 3rem;
+			font-family: suissethin;
+			font-size: 2.8rem;
 			color:#DCDCDC;
 		}
 			@media (max-width: 768px){
@@ -977,11 +1041,22 @@ ul, li {
 		}
 /*END TEMPLATES*/
 
+.fadeout{
+        position: fixed;
+        width:75%;
+        bottom: 3%;
+        text-align:center;
+  }
 
+  @media (max-width: 1024px){
+    .fadeout{
+          width:100%;
+    }
+  }
 
-
-
-
+ .fade{
+ 	opacity: 0;
+ }
 
 
 

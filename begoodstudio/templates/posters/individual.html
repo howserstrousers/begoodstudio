@@ -20,17 +20,19 @@
     {% endblock %}
   </div>
 
-  <div class="projecttitle">
-      <h1>
-        {{ item.name }}
-      </h1>
-  </div>
+  <div class="projecttext">
+    <div class="projecttitle">
+        <h1>
+          {{ item.name }}
+        </h1>
+    </div>
     
     <div class="projectdescription">
           <p>
             {{ item.description }}
           </p>
     </div>
+  </div>
 
         {% for row in item.image %}
 
@@ -39,5 +41,10 @@
           </div>
           
         {% endfor %}
+
+    <div class="fadeout">
+      <p>MORE<p>
+    </div>
+
 </div>
 {% endblock %}

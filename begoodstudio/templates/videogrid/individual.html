@@ -1,0 +1,49 @@
+{# ------------------------------------------------------- #}
+{# INDIVIDUAL VIEW FOR EACH videogrid #}
+{# This page can use any data from http:localhost:2000/cms/#/form/videogrid/ #}
+{# Webhook uses the SWIG.js (like Djagno/Twig) templating system. Their documentation is here: #}
+{# http://paularmstrong.github.io/swig/docs/tags/ #}
+{# Learn about calling data into Webhook pages here: #}
+{# http://www.webhook.com/docs/template-rules-and-filters/ #}
+{# ------------------------------------------------------- #}
+{# Confused what extends and blocks do? Watch a primer: #}
+{# http://www.webhook.com/docs/template-inheritance-blocks/ #}
+{% extends "templates/partials/base.html" %}
+{# This sets our page <title>. It will append this videogrid's name to the site title defined in base.html #}
+{% block title %}{% parent %} - {{ item.name }}{% endblock %}
+{% block content %}
+
+<div id="contentcontainer">
+
+    <div class="header">
+    {% block header %}
+      {% include "templates/partials/header.html" %}
+    {% endblock %}
+    </div>
+
+    <div class="projecttext">
+      <div class="projecttitle">
+        <h1>{{ item.name }}</h1>
+      </div>
+      
+      <div class="projectdescription">
+            <p>
+              {{ item.description }}
+            </p>
+      </div>
+    </div>
+
+      <div class="videogrid clearfix col-xs-12">
+          {% for row in item.video_grid %}
+              <div class="videogrid-responsive col-xs-6">
+                <iframe src="https://player.vimeo.com/video/{{ row.video_url }}?byline=0&portrait=0" width="1200" height="675" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+              </div>
+          {% endfor %}
+      </div>
+
+      <div class="fadeout">
+        <p>MORE<p>
+      </div>
+
+</div>
+{% endblock %}

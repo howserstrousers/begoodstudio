@@ -22,11 +22,11 @@
 </div>
 
  <!-- CONTAINERS NEW -->
-    <div id="ec1" onclick="window.location.href = '/projects/all-projects/';">
+    <div id="ec1" onclick="window.location.href = '/">
     </div>
-    <div id="ec2" onclick="window.location.href = '/projects/all-projects/';">
+    <div id="ec2" onclick="window.location.href = '/">
     </div>
-    <div id="ec3" onclick="window.location.href = '/projects/all-projects/';">
+    <div id="ec3" onclick="window.location.href = '/projects/all-projects/'">
     </div>
 
       <div id="maincontainer">
@@ -42,7 +42,7 @@
 
     <div class="projectcontainer">
       <div id="projectlist">
-        {% for row in item.grid %}
+        {% for row in cms.allprojects.grid %}
           <a id="project" href="/{{ row.link }}">
 
             <p>
@@ -69,7 +69,7 @@
     text-decoration: none;
     /*color: #f05058;*/
     color: transparent;  
-    text-shadow: 0 0 0 {{ item.projectlist_color_1 }};
+    text-shadow: 0 0 0 {{ cms.allprojects.projectlist_color_1 }};
   }
 
     @media (max-width: 768px){
@@ -99,7 +99,7 @@
   #projectlist a:nth-child(odd) {
       /*color: #6ec2dc;*/
       color: transparent;  
-      text-shadow: 0 0 0 {{ item.projectlist_color_2 }};
+      text-shadow: 0 0 0 {{ cms.allprojects.projectlist_color_2 }};
   }
 
   #project p{

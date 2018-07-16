@@ -1,6 +1,6 @@
 {# ------------------------------------------------------- #}
-{# INDIVIDUAL VIEW FOR EACH projects #}
-{# This page can use any data from http:localhost:2000/cms/#/form/projects/ #}
+{# ONE OFF VIEW allprojects #}
+{# This page can use any data from http:localhost:2000/cms/#/form/allprojects/ #}
 {# Webhook uses the SWIG.js (like Djagno/Twig) templating system. Their documentation is here: #}
 {# http://paularmstrong.github.io/swig/docs/tags/ #}
 {# Learn about calling data into Webhook pages here: #}
@@ -9,12 +9,9 @@
 {# Confused what extends and blocks do? Watch a primer: #}
 {# http://www.webhook.com/docs/template-inheritance-blocks/ #}
 {% extends "templates/partials/base.html" %}
-
-{# This sets our page <title>. It will append this projects's name to the site title defined in base.html #}
-{% block title %}{% parent %} - {{ item.name }}{% endblock %}
-
+{# This sets our page <title>. It will append this allprojects's name to the site title defined in base.html #}
+{% block title %}{% parent %} - {{ cms.allprojects.name }}{% endblock %}
 {% block content %}
-
 <div class="header">
   {% block header %}
     {% include "templates/partials/header.html" %}
@@ -22,7 +19,7 @@
 </div>
 
  <!-- CONTAINERS NEW -->
-    <div id="ec1" onclick="window.location.href = '/projects/all-projects/';">
+    <div id="ec1" onclick="window.location.href = '/allprojects.html';">
     </div>
     <div id="ec2" onclick="window.location.href = '/projects/all-projects/';">
     </div>
@@ -42,7 +39,7 @@
 
     <div class="projectcontainer">
       <div id="projectlist">
-        {% for row in item.grid %}
+        {% for row in cms.allprojects.grid %}
           <a id="project" href="/{{ row.link }}">
 
             <p>
@@ -69,7 +66,7 @@
     text-decoration: none;
     /*color: #f05058;*/
     color: transparent;  
-    text-shadow: 0 0 0 {{ item.projectlist_color_1 }};
+    text-shadow: 0 0 0 {{ cms.allprojects.projectlist_color_1 }};
   }
 
     @media (max-width: 768px){
@@ -99,7 +96,7 @@
   #projectlist a:nth-child(odd) {
       /*color: #6ec2dc;*/
       color: transparent;  
-      text-shadow: 0 0 0 {{ item.projectlist_color_2 }};
+      text-shadow: 0 0 0 {{ cms.allprojects.projectlist_color_2 }};
   }
 
   #project p{
@@ -108,7 +105,7 @@
   }
 
   #project p:hover{
-    background-color: yellow;
+    background-color: {{ cms.allprojects.hover_color }};
   }
 
   #project img{
@@ -123,5 +120,4 @@
 
 
 </style>
-
 {% endblock %}

@@ -12,35 +12,69 @@
 {# This sets our page <title>. It will append this videos's name to the site title defined in base.html #}
 {% block title %}{% parent %} - {{ item.name }}{% endblock %}
 {% block content %}
-
-<div id="videocontainer">  
+<div id="wrapper">
 
   <div class="header">
-    {% block header %}
-      {% include "templates/partials/header.html" %}
-    {% endblock %}
+        {% block header %}
+          {% include "templates/partials/header.html" %}
+        {% endblock %}
   </div>
 
-    <div class="projecttitle">
-          <h1>
-            {{ item.name }}
-          </h1>
-        </div>
 
-        <div class="projectdescription">
-          <p>
-            {{ item.description }}
-          </p>
-        </div>
+  <div class="projectcontainer">
+        <div id="projectlist">
+          {% for row in cms.allprojects.grid %}
+            <a id="project" href="/{{ row.link }}">
 
-    {% for row in item.video %}
-        <div class="video-responsive col-xs-12">
-          <iframe src="https://player.vimeo.com/video/{{ row.video_url }}?byline=0&portrait=0" width="1200" height="675" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+              <p>
+                {{ row.title }}
+              </p>
+            </a>
+          {% endfor %}
         </div>
-    {% endfor %}
+  </div>
+
+  <div id="maincontainer" style="display:block">
+
+    <div id="videocontainer">  
+
+      <div class="projecttext">
+        <div class="projecttitle">
+            <h1>
+              {{ item.name }}
+            </h1>
+          </div>
+
+          <div class="projectdescription">
+            <p>
+              {{ item.description }}
+            </p>
+          </div>
+      </div>
+
+        {% for row in item.video %}
+            <div class="video-responsive col-xs-12">
+              <iframe src="https://player.vimeo.com/video/{{ row.video_url }}?byline=0&portrait=0" width="1200" height="675" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+            </div>
+        {% endfor %}
+
+        <div class="fadeout" onscroll="myFunction()">
+          <p>MORE<p>
+        </div>
+    </div>
+  </div>
+
+  <div id="ec1" style="display:block" onclick="window.location.href = '/';">
+  </div>
 </div>
 
 <style>
+  #wrapper{
+    width:100%;
+    margin: 0 auto;
+  }
+
+
   #videocontainer{
         background-color: {{ cms.colors.maincontainer}};
       }
@@ -48,5 +82,72 @@
   #videocontainer{
         color: {{ cms.colors.text}};
       }
+
+  #projectlist{
+    text-align: center;
+    z-index: 500;
+    
+  }
+
+  #projectlist a{
+    font-size: 2.2rem;
+    line-height:3.5rem;
+    padding-right:1.75%;
+    position: relative;
+    text-decoration: none;
+    /*color: #f05058;*/
+    color: transparent;  
+    text-shadow: 0 0 0 {{ cms.allprojects.projectlist_color_1 }};
+  }
+
+    @media (max-width: 768px){
+      #projectlist a{
+        font-size: 2.5rem;
+        line-height:2.75rem;
+      }
+    }
+
+    @media (min-width: 1650px){
+      #projectlist a{
+        padding-right:2%;
+      }
+    }
+
+  #projectlist a:hover{
+    right:-10px;
+
+  }
+
+  @media (max-width: 1080px){
+      #projectlist a:hover{
+          right:0px;
+        }
+    }
+
+  #projectlist a:nth-child(odd) {
+      /*color: #6ec2dc;*/
+      color: transparent;  
+      text-shadow: 0 0 0 {{ cms.allprojects.projectlist_color_2 }};
+  }
+
+  #project p{
+    display: inline;
+    word-break:break-word;
+  }
+
+  #project p:hover{
+    background-color: {{ cms.allprojects.hover_color }};
+  }
+
+  #project img{
+    height:3.2rem;
+    float:left;
+  }
+    @media (max-width: 768px){
+      #project img{
+        height: 2.7rem;
+      }
+    }
+
 </style>
 {% endblock %}

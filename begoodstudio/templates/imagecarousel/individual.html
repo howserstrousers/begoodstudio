@@ -23,6 +23,7 @@
     {% endblock %}
   </div>
 
+      <div class="projecttext">
         <div class="projecttitle">
           <h1>
             {{ item.name }}
@@ -34,8 +35,7 @@
             {{ item.description }}
           </p>
         </div>
-
-        <br>
+      </div>
 
 
           <!--Vertical Carousel-->
@@ -71,6 +71,10 @@
                   {% endfor %}      
               </div>
           {% endfor %}
+
+    <div class="fadeout">
+      <p>MORE<p>
+    </div>
 </div>
 
 {% endblock %}

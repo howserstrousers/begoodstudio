@@ -33,40 +33,26 @@ $(document).ready(function() {
         $(window).resize(function() {
             setHeight();
         });
-
-        function setHeight() {
-          windowHeight = $(window).innerHeight();
-          $('#videocontainer').css('min-height', windowHeight);
-        };
-        setHeight();
-        
-        $(window).resize(function() {
-            setHeight();
-        });
-    // END Carousel
-
-    // mobile nav no scroll
-    $('.icon').click( function() { 
-              $('body').toggleClass("modal-open");
-        });
 });
 
 //DESKTOP JAVASCRIPT   
 if ( $(window).width() > 1024) {
 
     //Main container and close
-        $('#projectlist a').click(function(){
-            $('#maincontainer, #ec1').css({
-                display: 'block',
-            });
-
-                $('#projectlist a').click(function(){
-                    $('body').css('overflow','hidden');
+        /*
+            $('#projectlist a').click(function(){
+                $('#maincontainer, #ec1').css({
+                    display: 'block',
                 });
 
-        $("#maincontainer").load($(this).attr('href'));
-             return false;
-        });
+                $('#projectlist a').click(function(){
+                        $('body').css('overflow','hidden');
+                });
+
+                $("#maincontainer").load($(this).attr('href'));
+                 return false;
+            });
+        */
 
         $('#ec1, #abouttrigger a, #contacttrigger a').click(function(){
             $('#maincontainer, #ec1').css({
@@ -92,10 +78,13 @@ if ( $(window).width() > 1024) {
             });
         });
 
+
      /*body no scroll*/
+     /*
      $('#projectlist a').click( function() { 
               $('body').addClass("modal-open");
         });
+    */
 
      $('#cstrigger a').click( function() { 
               $('body').addClass("modal-open");
@@ -210,16 +199,8 @@ if ( $(window).width() > 1024) {
             });
         });
 
-    /*bodynoscroll
-        $("input#showpopup").click(function(){
-            $("div#overlay").fadeIn('500');       
-            $("div#popup").delay('800');
-            $("div#popup").fadeIn('500');         
-            $('body').css('overflow','hidden');
-       });
-    */
-
 //URL load
+/*
     var setCurrentPage = function(url) {
     $('#maincontainer').html(url || "/");
     $("#projectlist a[href='" + url + "']").fadeTo(500);
@@ -240,12 +221,26 @@ if ( $(window).width() > 1024) {
         $("#menu-nav a").fadeTo('fast', 1.0);
             setCurrentPage(e.state ? e.state.url : null);
     };
+*/
 
     
 }
 //END DESKTOP JAVASCRIPT
 
+$( document ).ready(function() {
+    var divs = $('.fadeout');
+    window.addEventListener('scroll', function(){
+                 divs.fadeOut("slow");
+     }, true)
+});
 
-
-
+/*
+ var divs = $('.fadeout');
+    $(window).scroll(function(){
+       if($(window).top()<10){
+             divs.stop(true,true).fadeIn("fast");
+       } else {
+             divs.stop(true,true).fadeOut("fast");
+       }
+*/
 

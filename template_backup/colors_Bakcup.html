@@ -1,0 +1,57 @@
+{# ------------------------------------------------------- #}
+{# ONE OFF VIEW colors #}
+{# This page can use any data from http:localhost:2000/cms/#/form/colors/ #}
+{# Webhook uses the SWIG.js (like Djagno/Twig) templating system. Their documentation is here: #}
+{# http://paularmstrong.github.io/swig/docs/tags/ #}
+{# Learn about calling data into Webhook pages here: #}
+{# http://www.webhook.com/docs/template-rules-and-filters/ #}
+{# ------------------------------------------------------- #}
+{# Confused what extends and blocks do? Watch a primer: #}
+{# http://www.webhook.com/docs/template-inheritance-blocks/ #}
+{% extends "templates/partials/base.html" %}
+{# This sets our page <title>. It will append this colors's name to the site title defined in base.html #}
+{% block title %}{% parent %} - {{ cms.colors.name }}{% endblock %}
+{% block content %}
+
+<style>
+/*main container color */
+      #maincontainer{
+        background-color:{{ cms.colors.maincontainer }};
+      }
+/*content container color */
+      #contentcontainer{
+        background-color:{{ cms.colors.contentcontainer_mobile }};
+      }
+/*about container color */
+      #aboutcontainer{
+        background-color:{{ cms.colors.aboutcontainer }};
+      }
+        #aboutcontainer{
+          background-color:{{ cms.colors.about_mobile }};
+        }
+/*contact container color */
+      #contactcontainer{
+        background-color:{{ cms.colors.contactcontainer }};
+      }
+/*text color */
+      #maincontainer{
+        color:{{ cms.colors.text }};
+      }
+
+      #contentcontainer{
+        color:{{ cms.colors.text }};
+      }
+
+      #aboutcontainer{
+        color:{{ cms.colors.text }};
+      }
+
+      #contactcontainer{
+        color:{{ cms.colors.text }};
+      }
+
+      #videocontainer{
+        color:{{ cms.colors.text }};
+      }
+</style>
+{% endblock %}

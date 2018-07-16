@@ -1,0 +1,120 @@
+{# ------------------------------------------------------- #}
+
+{# YOUR HOMEPAGE #}
+
+{# Webhook uses the SWIG.js (like Djagno/Twig) templating system. Their documentation is here: #}
+{# http://paularmstrong.github.io/swig/docs/tags/ #}
+
+{# Learn about calling data into Webhook pages here: #}
+{# http://www.webhook.com/docs/template-rules-and-filters/ #}
+
+{# ------------------------------------------------------- #}
+
+{# Confused what extends and blocks do? Watch a primer: #}
+{# http://www.webhook.com/docs/template-inheritance-blocks/ #}
+
+{% extends "templates/partials/base.html" %}
+
+{# This sets our page <title>. It will append "- Homepage" to the site title defined in base. #}
+{% block title %}{% parent %} - Home{% endblock %}
+
+{% block content %}
+<a class="enter" href="/projects/all-projects">
+<div id="indexcontainer">
+  <div class="holding">
+    <div class="holdinglogo">
+      <img src="/static/images/begoodlogo.png">
+    </div>
+  </div>
+
+  <!--
+    <div class="holdinginfo">
+      <p class="comingsoon">WELCOME</p>
+      <!--
+      <p>1427 EAST 4TH STREET LOS ANGELES CA 90033</p>
+
+      <div class="holdingcontact">
+        <a href="mailto:info@begoodstudios.com">
+          <p>info@begoodstudios.com</p>
+        </a>
+      </div>
+      
+    </div>
+  -->
+</div>
+</a>
+
+<script>
+$('.enter').click(function(){
+    $("#indexcontainer").fadeOut(2000);
+});
+
+</script>
+
+  <style>
+    #indexcontainer{
+      height:100vh;
+    }
+
+    .holding{
+
+    }
+
+    .holdinglogo{
+      width:70%;
+      padding-left: 15%;
+      position: absolute;
+      top: 45%;
+      transform: translateY(-50%);
+    }
+
+      @media (min-width: 1024px){
+        .holdinglogo{
+          width:30%;
+          padding-left: 35%;
+        }
+      }
+
+    .holdinglogo img{
+      width:100%;
+    }
+
+    .holdinginfo{
+      position: absolute;
+      top:85vh;
+      width: 100%;
+      margin: 0 auto;
+      text-align: center;
+      line-height: 1.8rem;
+      letter-spacing: 1px;
+      font-family: suissethin;
+    }
+      @media (max-width: 1024px){
+        .holdinginfo{
+          top:80vh;
+        }
+      }
+
+      .comingsoon{
+        margin-bottom: 5%;
+        color:black;
+        font-family:suissebook;
+      }
+        @media (min-width: 1024px){
+          .comingsoon{
+            margin-bottom: 2%;
+            color:black;
+          }
+        }
+
+        .comingsoon:hover{
+        text-decoration: underline;
+      }
+
+      .holdingcontact a{
+        color:#6ec2dc;
+        font-family: suissethin;
+      }
+
+  </style>
+{% endblock %}

@@ -20,29 +20,31 @@
     {% endblock %}
   </div>
   
-    <div class="aboutdescription">
-      <p>
-        {{ cms.about.about_us }}
-      </p>
-      <p>
-        {{ cms.about.description }}
-      </p>
-    </div>
+  <div class="abouttext">
+      <div class="aboutdescription">
+        <p>
+          {{ cms.about.about_us }}
+        </p>
+        <p>
+          {{ cms.about.description }}
+        </p>
+      </div>
 
-    <div class="aboutservices">
-      <li class="servicestitle">
-        {{ cms.about.services }}
-      </li>
+      <div class="aboutservices">
+        <li class="servicestitle">
+          {{ cms.about.services }}
+        </li>
 
-        <ul>
-        {% for row in cms.about.grid %}
-            <li class="servicelist">
-              {{ row.serviceslist }}
-            </li>
-        {% endfor %}
-        </ul>
+          <ul>
+          {% for row in cms.about.grid %}
+              <li class="servicelist">
+                {{ row.serviceslist }}
+              </li>
+          {% endfor %}
+          </ul>
+      </div>
 
-    </div>
+  </div>
 </div>
 
 <style>

@@ -11,9 +11,12 @@
 {% extends "templates/partials/base.html" %}
 {# This sets our page <title>. It will append this additionalassets's name to the site title defined in base.html #}
 {% block title %}{% parent %} - {{ item.name }}{% endblock %}
+{% block content %}
+<div id="ec1" onclick="window.location.href = '/allprojects.html';">
+</div>
 
-
-  {% block content %}
+<div id="maincontainer">
+      
 <div id="contentcontainer">
 
   <div class="header">
@@ -22,14 +25,16 @@
     {% endblock %}
   </div>
 
-  <div class="projecttitle">
-    <h1>{{ item.name }}</h1>
-  </div>
-    
-    <div class="projectdescription">
-          <p>
-            {{ item.description }}
-          </p>
+  <div class="projecttext">
+    <div class="projecttitle">
+      <h1>{{ item.name }}</h1>
+    </div>
+      
+      <div class="projectdescription">
+            <p>
+              {{ item.description }}
+            </p>
+      </div>
     </div>
 
       <div class="videogrid clearfix col-xs-12">
@@ -73,5 +78,10 @@
                     </div>
                 {% endfor %}
             </div>
+    <div class="fadeout">
+      <p>MORE<p>
+    </div>
+</div>
+
 </div>
   {% endblock %}
