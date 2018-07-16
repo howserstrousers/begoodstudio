@@ -12,12 +12,6 @@
 {# This sets our page <title>. It will append this additionalassets's name to the site title defined in base.html #}
 {% block title %}{% parent %} - {{ item.name }}{% endblock %}
 {% block content %}
-<div id="ec1" onclick="window.location.href = '/allprojects.html';">
-</div>
-
-<div id="maincontainer">
-      
-<div id="contentcontainer">
 
   <div class="header">
     {% block header %}
@@ -25,25 +19,52 @@
     {% endblock %}
   </div>
 
-  <div class="projecttext">
-    <div class="projecttitle">
-      <h1>{{ item.name }}</h1>
-    </div>
-      
-      <div class="projectdescription">
-            <p>
-              {{ item.description }}
-            </p>
-      </div>
-    </div>
-
-      <div class="videogrid clearfix col-xs-12">
-          {% for row in item.videogrid %}
-              <div class="videogrid-responsive col-xs-6">
-                <iframe src="https://player.vimeo.com/video/{{ row.videogrid_url }}?byline=0&portrait=0" width="1200" height="675" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-              </div>
+  <div class="projectcontainer">
+        <div id="projectlist">
+          {% for row in cms.allprojects.grid %}
+            <a id="project" href="/{{ row.link }}">
+              <p>
+                {{ row.title }}
+              </p>
+            </a>
           {% endfor %}
-      </div>
+        </div>
+  </div>
+
+  <div id="ec2" onclick="window.location.href = '/';">
+</div>
+<div id="ec3" onclick="window.location.href = '/';">
+</div>
+<div id="aboutcontainer" >
+</div>
+<div id="contactcontainer">
+</div>
+
+  <div id="ec1" style="display:block" onclick="window.location.href = '/';">
+  </div>
+
+  <div id="maincontainer" style="display:block">
+    <div id="contentcontainer">
+
+      <div class="projecttext">
+        <div class="projecttitle">
+          <h1>{{ item.name }}</h1>
+        </div>
+          
+          <div class="projectdescription">
+                <p>
+                  {{ item.description }}
+                </p>
+          </div>
+        </div>
+
+          <div class="videogrid clearfix col-xs-12">
+              {% for row in item.videogrid %}
+                  <div class="videogrid-responsive col-xs-6">
+                    <iframe src="https://player.vimeo.com/video/{{ row.videogrid_url }}?byline=0&portrait=0" width="1200" height="675" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                  </div>
+              {% endfor %}
+          </div>
 
           {% for row in item.imagecarousel %}
                   <div class="carousel_container col-xs-12">
@@ -60,28 +81,102 @@
                     </div>
 
           {% endfor %}
-          
-        <div class="postersingle col-xs-12">
-          <img src="{{ item.poster|imageSize(1200, 1200) }}" />
-        </div>
+              
+          <div class="postersingle col-xs-12">
+            <img src="{{ item.poster|imageSize(1200, 1200) }}" />
+          </div>
 
 
-            <div class="carousel_container col-xs-12">
+          <div class="carousel_container col-xs-12">
 
-                        <div class="prev_next">
-                        </div>
+                      <div class="prev_next">
+                      </div>
 
-                {% for image in item.carousel2 %}
-                    <div class="carousel_image col-xs-12"> 
-                      <img src="{{ image|imageSize(1200, 1200) }}">
-                      {{ image.caption }}
-                    </div>
-                {% endfor %}
-            </div>
-    <div class="fadeout">
-      <p>MORE<p>
+              {% for image in item.carousel2 %}
+                  <div class="carousel_image col-xs-12"> 
+                    <img src="{{ image|imageSize(1200, 1200) }}">
+                    {{ image.caption }}
+                  </div>
+              {% endfor %}
+          </div>
+
+          <div class="fadeout">
+            <p>MORE<p>
+          </div>
+
     </div>
-</div>
+  </div>
+<style>
+  @media (max-width: 1024px){
+    .projectcontainer{
+      display:none;
+    }
+  }
 
-</div>
+  #projectlist{
+    text-align: center;
+    z-index: 500;
+    
+  }
+
+  #projectlist a{
+    font-size: 2.2rem;
+    line-height:3.5rem;
+    padding-right:1.75%;
+    position: relative;
+    text-decoration: none;
+    /*color: #f05058;*/
+    color: transparent;  
+    text-shadow: 0 0 0 {{ cms.allprojects.projectlist_color_1 }};
+  }
+
+    @media (max-width: 1024px){
+      #projectlist a{
+        font-size: 2.5rem;
+        line-height:2.75rem;
+      }
+    }
+
+    @media (min-width: 1650px){
+      #projectlist a{
+        padding-right:2%;
+      }
+    }
+
+  #projectlist a:hover{
+    right:-10px;
+
+  }
+
+  @media (max-width: 1080px){
+      #projectlist a:hover{
+          right:0px;
+        }
+    }
+
+  #projectlist a:nth-child(odd) {
+      /*color: #6ec2dc;*/
+      color: transparent;  
+      text-shadow: 0 0 0 {{ cms.allprojects.projectlist_color_2 }};
+  }
+
+  #project p{
+    display: inline;
+    word-break:break-word;
+  }
+
+  #project p:hover{
+    background-color: {{ cms.allprojects.hover_color }};
+  }
+
+  #project img{
+    height:3.2rem;
+    float:left;
+  }
+    @media (max-width: 768px){
+      #project img{
+        height: 2.7rem;
+      }
+    }
+  </style>
   {% endblock %}

@@ -12,7 +12,7 @@
 {# This sets our page <title>. It will append this videos's name to the site title defined in base.html #}
 {% block title %}{% parent %} - {{ item.name }}{% endblock %}
 {% block content %}
-<div id="wrapper">
+
 
   <div class="header">
         {% block header %}
@@ -25,7 +25,6 @@
         <div id="projectlist">
           {% for row in cms.allprojects.grid %}
             <a id="project" href="/{{ row.link }}">
-
               <p>
                 {{ row.title }}
               </p>
@@ -34,10 +33,21 @@
         </div>
   </div>
 
+  <div id="ec2" onclick="window.location.href = '/';">
+  </div>
+  <div id="ec3" onclick="window.location.href = '/';">
+  </div>
+  <div id="aboutcontainer" >
+  </div>
+  <div id="contactcontainer">
+  </div>
+
+  <div id="ec1" style="display:block" onclick="window.location.href = '/';">
+  </div>
+
   <div id="maincontainer" style="display:block">
 
-    <div id="videocontainer">  
-
+    <div id="videocontainer">
       <div class="projecttext">
         <div class="projecttitle">
             <h1>
@@ -62,27 +72,17 @@
           <p>MORE<p>
         </div>
     </div>
+
   </div>
 
-  <div id="ec1" style="display:block" onclick="window.location.href = '/';">
-  </div>
-</div>
 
 <style>
-  #wrapper{
-    width:100%;
-    margin: 0 auto;
+@media (max-width: 1024px){
+    .projectcontainer{
+      display:none;
+    }
   }
-
-
-  #videocontainer{
-        background-color: {{ cms.colors.maincontainer}};
-      }
-
-  #videocontainer{
-        color: {{ cms.colors.text}};
-      }
-
+  
   #projectlist{
     text-align: center;
     z-index: 500;

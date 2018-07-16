@@ -14,14 +14,39 @@
 
 {% block title %}{% parent %} - {{ item.name }}{% endblock %}
 {% block content %}
-
-<div id="contentcontainer">
-
-  <div class="header">
+<div class="header">
     {% block header %}
       {% include "templates/partials/header.html" %}
     {% endblock %}
-  </div>
+</div>
+
+<div class="projectcontainer">
+      <div id="projectlist">
+        {% for row in cms.allprojects.grid %}
+          <a id="project" href="/{{ row.link }}">
+            <p>
+              {{ row.title }}
+            </p>
+          </a>
+        {% endfor %}
+      </div>
+</div>
+
+<div id="ec1" style="display:block" onclick="window.location.href = '/';">
+</div>
+
+<div id="ec2" onclick="window.location.href = '/';">
+    </div>
+    <div id="ec3" onclick="window.location.href = '/';">
+    </div>
+<div id="aboutcontainer" >
+</div>
+<div id="contactcontainer">
+</div>
+
+<div id="maincontainer" style="display:block">
+<div id="contentcontainer">
+
 
       <div class="projecttext">
         <div class="projecttitle">
@@ -49,7 +74,6 @@
                   {% for image in row.gallery %}
                     <div class="carousel_image col-xs-12">   
                       <img src="{{ image|imageSize(1200, 1200) }}">
-                      {{ image.caption }}
                     </div>    
                   {% endfor %}      
               </div>
@@ -66,7 +90,6 @@
                   {% for image in row.gallery %}
                     <div class="carousel_image col-xs-12">   
                       <img src="{{ image|imageSize(1200, 1200) }}">
-                      {{ image.caption }}
                     </div>    
                   {% endfor %}      
               </div>
@@ -76,5 +99,80 @@
       <p>MORE<p>
     </div>
 </div>
+</div>
+
+<style>
+  @media (max-width: 1024px){
+    .projectcontainer{
+      display:none;
+    }
+  }
+  
+  #projectlist{
+    text-align: center;
+    z-index: 500;
+    
+  }
+
+  #projectlist a{
+    font-size: 2.2rem;
+    line-height:3.5rem;
+    padding-right:1.75%;
+    position: relative;
+    text-decoration: none;
+    /*color: #f05058;*/
+    color: transparent;  
+    text-shadow: 0 0 0 {{ cms.allprojects.projectlist_color_1 }};
+  }
+
+    @media (max-width: 768px){
+      #projectlist a{
+        font-size: 2.5rem;
+        line-height:2.75rem;
+      }
+    }
+
+    @media (min-width: 1650px){
+      #projectlist a{
+        padding-right:2%;
+      }
+    }
+
+  #projectlist a:hover{
+    right:-10px;
+
+  }
+
+  @media (max-width: 1080px){
+      #projectlist a:hover{
+          right:0px;
+        }
+    }
+
+  #projectlist a:nth-child(odd) {
+      /*color: #6ec2dc;*/
+      color: transparent;  
+      text-shadow: 0 0 0 {{ cms.allprojects.projectlist_color_2 }};
+  }
+
+  #project p{
+    display: inline;
+    word-break:break-word;
+  }
+
+  #project p:hover{
+    background-color: {{ cms.allprojects.hover_color }};
+  }
+
+  #project img{
+    height:3.2rem;
+    float:left;
+  }
+    @media (max-width: 768px){
+      #project img{
+        height: 2.7rem;
+      }
+    }
+  </style>
 
 {% endblock %}

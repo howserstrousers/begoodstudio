@@ -33,6 +33,16 @@ $(document).ready(function() {
         $(window).resize(function() {
             setHeight();
         });
+
+        function setHeight() {
+          windowHeight = $(window).innerHeight();
+          $('#contactcontainer').css('min-height', windowHeight);
+        };
+        setHeight();
+        
+        $(window).resize(function() {
+            setHeight();
+        });
 });
 
 //DESKTOP JAVASCRIPT   
@@ -97,6 +107,8 @@ if ( $(window).width() > 1024) {
      $('#contacttrigger a').click( function() { 
               $('body').addClass("modal-open");
         });
+
+     
 
 
     /*nav color change*/
